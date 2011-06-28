@@ -1,4 +1,4 @@
-#require YOUR_PROVIDER_API
+require File.dirname(__FILE__) + '/versionone/versionone-api'
 
 %w{ versionone ticket project comment }.each do |f|
   require File.dirname(__FILE__) + '/provider/' + f + '.rb';

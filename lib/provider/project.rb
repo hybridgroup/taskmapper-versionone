@@ -1,10 +1,10 @@
 module TicketMaster::Provider
-  module Versioonne
+  module Versionone
     # Project class for ticketmaster-versioonne
     #
     #
     class Project < TicketMaster::Provider::Base::Project
-      #API = Versioonne::Project # The class to access the api's projects
+      API = VersiononeAPI::Scope # The class to access the api's projects
       # declare needed overloaded methods here
       
       
