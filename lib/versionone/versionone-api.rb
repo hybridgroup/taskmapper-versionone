@@ -22,7 +22,7 @@ module VersiononeAPI
       self::Base.password = password
 
       resources.each do |klass|
-        klass.site = "#{servname}rest-1.v1/Data/"
+        klass.site = klass.site_format % "#{servname}rest-1.v1/Data/"
       end
     end
 
@@ -34,6 +34,10 @@ module VersiononeAPI
   class Base < ActiveResource::Base
     def self.inherited(base)
       VersiononeAPI.resources << base
+      class << base
+        attr_accessor :site_format
+      end
+      base.site_format = '%s'
       super
     end
   end
@@ -75,6 +79,9 @@ module VersiononeAPI
       end
 
       def self.element_path(id, prefix_options = {}, query_options = nil)
+        #id format is "resource_name:id", but element_path just needs the id, without the resource_name.
+        scope_id = id.to_s
+        scope_id.gsub!("Scope:", "")
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
         "#{prefix(prefix_options)}Scope/#{URI.escape id.to_s}#{query_string(query_options)}"
       end
@@ -88,9 +95,35 @@ module VersiononeAPI
         val += "</Asset>"
       end
 
+      def tickets(options = {})
+        Issue.find(:all, :params => options.update(:scope_id => scope_id))
+      end
+
+      def scope_id
+        scope_id = attributes[:id]
+        scope_id.gsub!("Scope:", "")
+      end
+
   end
 
-  class Task < Base
+  class Issue < Base
+
+      self.site_format << 'Scope/:id/'
+
+      def self.collection_path(prefix_options = {}, query_options = nil)
+        prefix_options, query_options = split_options(prefix_options) if query_options.nil?
+        "#{prefix(prefix_options)}Issues#{query_string(query_options)}"
+      end
+
+      def self.instantiate_collection(collection, prefix_options = {})
+        objects = collection["Asset"]
+        objects.collect! { |record| instantiate_record(record, prefix_options) }
+      end
+
+      #def scope_id
+      #  scope_id = attributes[:Relation][4].attributes["Asset"].attributes[:idref]
+      #  scope_id.gsub!("Scope:", "")
+      #end
 
   end
 
