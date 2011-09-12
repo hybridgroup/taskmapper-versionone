@@ -11,12 +11,15 @@ module TicketMaster::Provider
             #options[0].merge!(:params => {:id => id})
             super(*options)
           elsif options.empty?
-            puts id
             tickets = VersiononeAPI::Issue.find(:all, :params => {:id => id}).collect { |ticket| TicketMaster::Provider::Versionone::Ticket.new ticket }
           else
             super(*options)
           end
       end  
+
+      def name
+        self[:Attribute][2]
+      end
 
       def ticket!(*options)
         options[0].merge!(:id => id) if options.first.is_a?(Hash)
