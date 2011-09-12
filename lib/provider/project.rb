@@ -5,23 +5,6 @@ module TicketMaster::Provider
       # declare needed overloaded methods here
       
       # copy from this.copy(that) copies that into this
-     #def initialize(*object)
-     #  if object.first
-     #    object = object.first
-     #    @system_data = {:client => object}
-     #    unless object.is_a? Hash
-     #     hash = {:name => object.attributes[:Attribute][3],
-     #             :description => object.attributes[:Attribute][0],
-     #             :begindate => object.attributes[:Attribute][13],
-     #             :enddate => object.attributes[:Attribute][7],
-     #             :id => object.attributes[:id],
-     #             :parent => object.attributes[:Attribute][18]}
-     #    else
-     #      hash = object
-     #    end
-     #    super hash
-     #  end
-     #end
 
       def tickets(*options)
           if options.first.is_a? Hash
