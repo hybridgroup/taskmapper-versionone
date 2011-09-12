@@ -32,6 +32,7 @@ module VersiononeAPI
   end
 
   class Base < ActiveResource::Base
+    self.format = :xml
     def self.inherited(base)
       VersiononeAPI.resources << base
       class << base
