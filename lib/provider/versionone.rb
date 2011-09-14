@@ -15,16 +15,20 @@ module TicketMaster::Provider
     def authorize(auth = {})
       @authentication ||= TicketMaster::Authenticator.new(auth)
       auth = @authentication
-      if auth.servname? and auth.username.blank? and auth.password.blank?
+      if auth.server.blank? and auth.username.blank? and auth.password.blank?
         raise "Please provide server, username and password"
       end
-      VersiononeAPI.authenticate(auth.servname, auth.username, auth.password)
+      VersiononeAPI.authenticate(auth.server, auth.username, auth.password)
     end
     
     # declare needed overloaded methods here
 
     def valid?
-
+      begin
+        !PROJECT_API.find(:all).nil?
+      rescue
+        false
+      end
     end
     
   end

@@ -5,6 +5,10 @@ module TicketMaster::Provider
       # declare needed overloaded methods here
       
       # copy from this.copy(that) copies that into this
+      
+      def self.find_by_attributes(attributes = {})
+        self.search(attributes)
+      end
 
       def tickets(*options)
           if options.first.is_a? Hash
