@@ -1,6 +1,6 @@
-module TicketMaster::Provider
+module TaskMapper::Provider
   module Versionone
-    class Project < TicketMaster::Provider::Base::Project
+    class Project < TaskMapper::Provider::Base::Project
       API = VersiononeAPI::Scope # The class to access the api's projects
       # declare needed overloaded methods here
       
@@ -15,7 +15,7 @@ module TicketMaster::Provider
             #options[0].merge!(:params => {:id => id})
             super(*options)
           elsif options.empty?
-            tickets = VersiononeAPI::Issue.find(:all, :params => {:id => id}).collect { |ticket| TicketMaster::Provider::Versionone::Ticket.new ticket }
+            tickets = VersiononeAPI::Issue.find(:all, :params => {:id => id}).collect { |ticket| TaskMapper::Provider::Versionone::Ticket.new ticket }
           else
             super(*options)
           end

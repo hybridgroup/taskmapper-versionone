@@ -1,9 +1,9 @@
-module TicketMaster::Provider
+module TaskMapper::Provider
   module Versionone
-    # Ticket class for ticketmaster-versionone
+    # Ticket class for taskmapper-versionone
     #
     
-    class Ticket < TicketMaster::Provider::Base::Ticket
+    class Ticket < TaskMapper::Provider::Base::Ticket
       API = VersiononeAPI::Issue # The class to access the api's tickets
       # declare needed overloaded methods here
       def initialize(*object)
