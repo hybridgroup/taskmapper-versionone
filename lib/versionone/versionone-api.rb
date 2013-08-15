@@ -75,18 +75,26 @@ module VersiononeAPI
         "#{prefix(prefix_options)}Scope#{query_string(query_options)}"
       end
 
+      def self.element_path(id, prefix_options = {}, query_options = nil)
+        #id format is "resource_name:id", but element_path just needs the id, without the resource_name.
+        scope_id = id.to_s
+        scope_id.gsub!("Scope:", "")
+        prefix_options, query_options = split_options(prefix_options) if query_options.nil?
+        "#{prefix(prefix_options)}Scope/#{URI.escape scope_id}#{query_string(query_options)}"
+      end
+
       def self.instantiate_collection(collection, prefix_options = {})
         objects = collection["Asset"]
         objects = [ objects ] if !objects.kind_of?(Array)
         objects.collect! { |record| instantiate_record(record, prefix_options) }
       end
 
-      def self.element_path(id, prefix_options = {}, query_options = nil)
-        #id format is "resource_name:id", but element_path just needs the id, without the resource_name.
-        scope_id = id.to_s
-        scope_id.gsub!("Scope:", "")
-        prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-        "#{prefix(prefix_options)}Scope/#{URI.escape id.to_s}#{query_string(query_options)}"
+      def self.instantiate_record(record, prefix_option = {})
+        if record.has_key? 'id'
+          super(record, prefix_option)
+        else
+          super(record["Asset"], prefix_option)
+        end
       end
 
       def encode(options={})
