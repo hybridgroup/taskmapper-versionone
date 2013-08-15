@@ -41,3 +41,5 @@ pkg
 # For vim:
 *.swp
 *.un~
+# For RubyMine
+.idea
