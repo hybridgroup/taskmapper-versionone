@@ -4,7 +4,7 @@ describe "TaskMapper::Versionone::Project" do
 
   before(:all) do
     headers = headers_for('admin', 'admin')
-    @project_id = '1009'
+    @project_id = 1009
     ActiveResource::HttpMock.respond_to do |mock|
       mock.get '/Trial30/rest-1.v1/Data/Scope', headers, fixture_for('Scope'), 200
       mock.get '/Trial30/rest-1.v1/Data/Scope/1009', headers, fixture_for('Scope'), 200
@@ -21,13 +21,22 @@ describe "TaskMapper::Versionone::Project" do
       projects = @taskmapper.projects
       projects.should be_an_instance_of(Array)
       projects.first.should be_an_instance_of(@klass)
+      projects.first.id.should == @project_id
     end
 
     it "should be able to retrieve projects from an array of ids" do
-      @projects = @taskmapper.projects([@project_id])
-      @projects.should be_an_instance_of(Array)
-      @projects.first.should be_an_instance_of(@klass)
-      @projects.first.id.should == @project_id
+      projects = @taskmapper.projects([@project_id])
+      projects.should be_an_instance_of(Array)
+      projects.first.should be_an_instance_of(@klass)
+      projects.first.id.should == @project_id
+      projects.length.should == 1
+    end
+
+    it "should be able to load all projects from attributes" do
+      projects = @taskmapper.projects(:id => @project_id)
+      projects.should be_an_instance_of(Array)
+      projects.first.should be_an_instance_of(@klass)
+      projects.first.id.should == @project_id
     end
   end
 end

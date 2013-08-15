@@ -46,7 +46,12 @@ module TaskMapper::Provider
 
       def id
         scope_id = self[:id]
-        scope_id.gsub!("Scope:", "")
+
+        if scope_id.index("Scope:") != nil
+          scope_id.gsub!("Scope:", "")
+        end
+
+        scope_id.to_i
       end
 
     end
