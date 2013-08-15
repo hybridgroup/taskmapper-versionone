@@ -98,12 +98,12 @@ module VersiononeAPI
       end
 
       def encode(options={})
-        val = ""
-        val += "<Asset>"
+        val = ''
+        val += '<Asset>'
         attributes.each_pair do |key, value|
           val += "<Attribute name='#{key}' act='set'>#{value}</Attribute>"
         end
-        val += "</Asset>"
+        val += '</Asset>'
       end
 
       def tickets(options = {})
@@ -112,7 +112,7 @@ module VersiononeAPI
 
       def scope_id
         scope_id = attributes[:id]
-        scope_id.gsub!("Scope:", "")
+        scope_id.gsub!('Scope:', '')
       end
 
   end

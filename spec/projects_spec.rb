@@ -54,5 +54,13 @@ describe "TaskMapper::Versionone::Project" do
       @taskmapper.project(:id => @project_id).should be_an_instance_of(@klass)
     end
 
+    it "should be able to update and save a project" do
+      pending("using posts in the api access")
+      @project = @taskmapper.project(@project_id)
+      @project.update!(:name => 'some new name').should == true
+      @project.name = 'this is a change'
+      @project.save.should == true
+    end
+
   end
 end
