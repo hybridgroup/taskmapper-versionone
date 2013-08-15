@@ -15,14 +15,15 @@ module VersiononeAPI
 
     #Sets up basic authentication credentials for all the resources.
     def authenticate(servname, username, password)
-      @server   = servname
+      @server = servname
+      @server << '/' unless @server.end_with?('/')
       @username = username
       @password = password
       self::Base.user = username
       self::Base.password = password
 
       resources.each do |klass|
-        klass.site = klass.site_format % "#{servname}rest-1.v1/Data/"
+        klass.site = klass.site_format % "#{@server}rest-1.v1/Data/"
       end
     end
 
@@ -76,6 +77,7 @@ module VersiononeAPI
 
       def self.instantiate_collection(collection, prefix_options = {})
         objects = collection["Asset"]
+        objects = [ objects ] if !objects.kind_of?(Array)
         objects.collect! { |record| instantiate_record(record, prefix_options) }
       end
 
@@ -118,6 +120,7 @@ module VersiononeAPI
 
       def self.instantiate_collection(collection, prefix_options = {})
         objects = collection["Asset"]
+        objects = [ objects ] if !objects.kind_of?(Array)
         objects.collect! { |record| instantiate_record(record, prefix_options) }
       end
 

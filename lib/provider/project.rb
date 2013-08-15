@@ -3,7 +3,11 @@ module TaskMapper::Provider
     class Project < TaskMapper::Provider::Base::Project
       API = VersiononeAPI::Scope # The class to access the api's projects
       # declare needed overloaded methods here
-      
+
+      attr_accessor :prefix_options
+      alias_method :stories, :tickets
+      alias_method :story, :ticket
+
       # copy from this.copy(that) copies that into this
       
       def self.find_by_attributes(attributes = {})

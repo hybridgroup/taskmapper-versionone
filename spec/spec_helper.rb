@@ -12,6 +12,13 @@ RSpec.configure do |config|
   config.color_enabled = true
 end
 
+def headers_for(username, password)
+  return {
+      'Authorization' => "Basic #{Base64.encode64(username + ':' + password)}".strip,
+      'Accept' => 'application/xml'
+  }
+end
+
 def fixture_for(name, format = 'xml')
   File.read(File.dirname(__FILE__) + "/fixtures/#{name}.#{format}")
 end

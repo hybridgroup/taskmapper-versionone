@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Assets total="1" pageSize="2147483647" pageStart="0">
+  <Asset href="/Trail30/rest-1.v1/Data/Scope/1009" id="Scope:1009">
+    <Attribute name="AssetType">Scope</Attribute>
+    <Relation name="Schedule">
+      <Asset href="/Trail30/rest-1.v1/Data/Schedule/1000" idref="Schedule:1000"/>
+    </Relation>
+    <Relation name="Parent"/>
+    <Relation name="Owner">
+      <Asset href="/Trail30/rest-1.v1/Data/Member/20" idref="Member:20"/>
+    </Relation>
+    <Attribute name="Description"/>
+    <Attribute name="Name">MyProjectName</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="EndDate"/>
+    <Attribute name="BeginDate">2013-06-10</Attribute>
+    <Relation name="Status"/>
+    <Relation name="TestSuite"/>
+    <Relation name="SecurityScope">
+      <Asset href="/Trail30/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Scheme">
+      <Asset href="/Trail30/rest-1.v1/Data/Scheme/1001" idref="Scheme:1001"/>
+    </Relation>
+    <Attribute name="Reference"/>
+    <Attribute name="Schedule.Name">MyProjectName</Attribute>
+    <Attribute name="Parent.Name"/>
+    <Attribute name="Owner.Name">MyProjectOwner</Attribute>
+    <Attribute name="Owner.Nickname">Admin</Attribute>
+    <Attribute name="Status.Name"/>
+    <Attribute name="TestSuite.Name"/>
+    <Attribute name="SecurityScope.Name">MyProjectName</Attribute>
+    <Attribute name="Scheme.Name">Default Scheme</Attribute>
+    <Relation name="BuildProjects"/>
+    <Attribute name="BuildProjects.Name"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+
+</Assets>
