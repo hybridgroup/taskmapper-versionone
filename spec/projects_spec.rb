@@ -38,5 +38,21 @@ describe "TaskMapper::Versionone::Project" do
       projects.first.should be_an_instance_of(@klass)
       projects.first.id.should == @project_id
     end
+
+    it "should be able to find a project" do
+      @taskmapper.project.should == @klass
+      @taskmapper.project.find(@project_id).should be_an_instance_of(@klass)
+    end
+
+    it "should be able to find a project by id" do
+      @taskmapper.project(@project_id).should be_an_instance_of(@klass)
+      @taskmapper.project(@project_id).id.should == @project_id
+    end
+
+    it "should be able to find a project by attributes" do
+      @taskmapper.project(:id => @project_id).id.should == @project_id
+      @taskmapper.project(:id => @project_id).should be_an_instance_of(@klass)
+    end
+
   end
 end
