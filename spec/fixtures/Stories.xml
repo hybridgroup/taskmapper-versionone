@@ -1,0 +1,3691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Assets total="56" pageSize="2147483647" pageStart="0">
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1013" id="Story:1013">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Set up Heroku</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">1</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01001</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent"/>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 0</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Accepted</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name"/>
+    <Attribute name="Parent.Number"/>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
+    </Relation>
+    <Attribute name="Owners.Name">
+      <Value>jason.stull@devjam.com</Value>
+    </Attribute>
+    <Attribute name="Owners.Nickname">
+      <Value>jason.stull</Value>
+    </Attribute>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1014" id="Story:1014">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Set up Selenium</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">2</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01002</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 0</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Accepted</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
+    </Relation>
+    <Attribute name="Owners.Name">
+      <Value>jason.stull@devjam.com</Value>
+    </Attribute>
+    <Attribute name="Owners.Nickname">
+      <Value>jason.stull</Value>
+    </Attribute>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1015" id="Story:1015">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Set up SCM</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">3</Attribute>
+    <Attribute name="Estimate">0.5</Attribute>
+    <Attribute name="Number">B-01003</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent"/>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 0</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Accepted</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name"/>
+    <Attribute name="Parent.Number"/>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
+    </Relation>
+    <Attribute name="Owners.Name">
+      <Value>jason.stull@devjam.com</Value>
+    </Attribute>
+    <Attribute name="Owners.Nickname">
+      <Value>jason.stull</Value>
+    </Attribute>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1016" id="Story:1016">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Figure out how to plug in Google Analytics</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">4</Attribute>
+    <Attribute name="Estimate">0.5</Attribute>
+    <Attribute name="Number">B-01004</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 0</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Accepted</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
+    </Relation>
+    <Attribute name="Owners.Name">
+      <Value>jason.stull@devjam.com</Value>
+    </Attribute>
+    <Attribute name="Owners.Nickname">
+      <Value>jason.stull</Value>
+    </Attribute>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1017" id="Story:1017">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Pick logging tool</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">5</Attribute>
+    <Attribute name="Estimate">0.5</Attribute>
+    <Attribute name="Number">B-01005</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 0</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Accepted</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
+    </Relation>
+    <Attribute name="Owners.Name">
+      <Value>jason.stull@devjam.com</Value>
+    </Attribute>
+    <Attribute name="Owners.Nickname">
+      <Value>jason.stull</Value>
+    </Attribute>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1018" id="Story:1018">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Select langauge/platform</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">6</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01006</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 0</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Accepted</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
+    </Relation>
+    <Attribute name="Owners.Name">
+      <Value>jason.stull@devjam.com</Value>
+    </Attribute>
+    <Attribute name="Owners.Nickname">
+      <Value>jason.stull</Value>
+    </Attribute>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1019" id="Story:1019">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Select datastore</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">7</Attribute>
+    <Attribute name="Estimate">1.5</Attribute>
+    <Attribute name="Number">B-01007</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 0</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Accepted</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
+    </Relation>
+    <Attribute name="Owners.Name">
+      <Value>jason.stull@devjam.com</Value>
+    </Attribute>
+    <Attribute name="Owners.Nickname">
+      <Value>jason.stull</Value>
+    </Attribute>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1020" id="Story:1020">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Set up CI</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">8</Attribute>
+    <Attribute name="Estimate">2</Attribute>
+    <Attribute name="Number">B-01008</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 0</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Accepted</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
+    </Relation>
+    <Attribute name="Owners.Name">
+      <Value>jason.stull@devjam.com</Value>
+    </Attribute>
+    <Attribute name="Owners.Nickname">
+      <Value>jason.stull</Value>
+    </Attribute>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1021" id="Story:1021">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Select client-side frameworks/libraries</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">9</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01009</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 0</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Accepted</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
+    </Relation>
+    <Attribute name="Owners.Name">
+      <Value>jason.stull@devjam.com</Value>
+    </Attribute>
+    <Attribute name="Owners.Nickname">
+      <Value>jason.stull</Value>
+    </Attribute>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1026" id="Story:1026">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1025" idref="Timebox:1025"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show That:&lt;/p&gt;
+      &lt;ol&gt;
+      &lt;li&gt;When landing on the main page, the most recent cards appear in an uncategorized fashion&lt;/li&gt;
+      &lt;li&gt;The cards appear in descending order by date from top to bottom on the page&lt;/li&gt;
+      &lt;li&gt;Cards arrange in columns based on screen size (i.e. responsive UI).&lt;/li&gt;
+      &lt;li&gt;There is a banner at the top of the page with the ProfileHealth logo and title&lt;/li&gt;
+      &lt;li&gt;Each Card must have:&lt;/li&gt;
+      &lt;ol&gt;
+      &lt;li&gt;Category&lt;/li&gt;
+      &lt;li&gt;Title&lt;/li&gt;
+      &lt;li&gt;Description (Optional)&lt;/li&gt;
+      &lt;li&gt;Image (Optional)&lt;/li&gt;
+      &lt;li&gt;"Provided By" Footer (Optional) and Link(?)&lt;/li&gt;
+      &lt;li&gt;Empty Footer&lt;/li&gt;
+      &lt;li&gt;Link (navigated to by clicking on 1-4, opened in new page/tab)&amp;nbsp;&lt;/li&gt;
+      &lt;/ol&gt;
+      &lt;li&gt;Number Cards will be limited to a as-of-yet unspecified number (per page).&lt;/li&gt;
+      &lt;/ol&gt;
+      &lt;p&gt;Questions:&lt;/p&gt;
+      &lt;p&gt;1. Are Card Categories going to be colored?&lt;/p&gt;
+      &lt;p&gt;2. How many cards per page?&lt;/p&gt;
+      &lt;p&gt;3. What should be clickable on a card? The title/description/both? &lt;/p&gt;</Attribute>
+    <Attribute name="Name">Display cards for all categories</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">4</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">10</Attribute>
+    <Attribute name="Estimate">4</Attribute>
+    <Attribute name="Number">B-01010</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/134" idref="StoryStatus:134"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 1</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">In Progress</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1027" id="Story:1027">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1062" idref="Timebox:1062"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show that:&lt;/p&gt;
+      &lt;p&gt;1. As topics are chosen on the left nav bar, then the cards shown become exclusive to the those choices.&lt;/p&gt;
+      &lt;p&gt;2. The parent topic, as in Diabetes, cards will not be filtered out&lt;/p&gt;
+      &lt;p&gt;&lt;br /&gt;Questions:&lt;/p&gt;
+      &lt;p&gt;If no diabetes categories are chosen, do we show diabetes general category cards?&lt;/p&gt;</Attribute>
+    <Attribute name="Name">Filter cards by interest</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">11</Attribute>
+    <Attribute name="Estimate">4</Attribute>
+    <Attribute name="Number">B-01011</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 2</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1028" id="Story:1028">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1062" idref="Timebox:1062"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show that:&lt;/p&gt;
+      &lt;ol&gt;
+      &lt;li&gt;Members can see a list of topic in a "My Interests" panel&lt;br /&gt;2.&amp;nbsp; Members can add an
+      topic&lt;/li&gt;
+      &lt;ol&gt;
+      &lt;li&gt;Topic is selected a dialog &lt;/li&gt;
+      &lt;li&gt;member may choose the set of sub-topics for the topic&lt;/li&gt;
+      &lt;li&gt;"Save &amp;amp; Close" is only enabled when at least one sub-topic is selected&lt;/li&gt;
+      &lt;li&gt;On save, the interest panel is updated with the new topic&lt;/li&gt;
+      &lt;li&gt;User can cancel adding topics of interest&lt;/li&gt;
+      &lt;li&gt;User will only be able to click "save and close" until changes have been made under a topic of interest&lt;/li&gt;
+      &lt;/ol&gt;&lt;/ol&gt;
+      &lt;p&gt;Questions:&lt;/p&gt;
+      &lt;p&gt;How does the "Edit Activities" feature work?&lt;/p&gt;
+      &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+      &lt;p&gt;&amp;nbsp;&lt;/p&gt;</Attribute>
+    <Attribute name="Name">Add Interest to My Interest Panel</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">2.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">12</Attribute>
+    <Attribute name="Estimate">1.5</Attribute>
+    <Attribute name="Number">B-01012</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 2</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1029" id="Story:1029">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1062" idref="Timebox:1062"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show that:&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;A member can create a profile, which consists of:&lt;/li&gt;
+      &lt;ul&gt;
+      &lt;li&gt;a name&lt;/li&gt;
+      &lt;li&gt;an email address&lt;/li&gt;
+      &lt;li&gt;password&lt;/li&gt;
+      &lt;li&gt;password confirm&lt;/li&gt;
+      &lt;li&gt;captcha&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;li&gt;the profile is created in modal dialog&lt;/li&gt;
+      &lt;li&gt;the member name will be visible in the upper righthand corner.&lt;/li&gt;
+      &lt;li&gt;Confirm valid email&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;&amp;nbsp;&lt;/p&gt;</Attribute>
+    <Attribute name="Name">Create Profile</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">2</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">13</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01013</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 2</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1030" id="Story:1030">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1063" idref="Timebox:1063"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Save/Load My Interests to My Profile</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">1.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">14</Attribute>
+    <Attribute name="Estimate">0.5</Attribute>
+    <Attribute name="Number">B-01014</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 3</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Accepted</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1031" id="Story:1031">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1063" idref="Timebox:1063"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show that:&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;Content Cards float to the top&lt;/li&gt;
+      &lt;li&gt;content cards are tied to the currently selected top-level topics (e.g diabetes)&lt;/li&gt;
+      &lt;li&gt;a member can dismiss content cards&lt;/li&gt;
+      &lt;/ul&gt;</Attribute>
+    <Attribute name="Name">Display Internal Content Cards</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">2</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">15</Attribute>
+    <Attribute name="Estimate">2</Attribute>
+    <Attribute name="Number">B-01015</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 3</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1032" id="Story:1032">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Add item to clipboard</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">16</Attribute>
+    <Attribute name="Estimate">1.5</Attribute>
+    <Attribute name="Number">B-01016</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1033" id="Story:1033">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Add Clipboard</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">17</Attribute>
+    <Attribute name="Estimate">1.5</Attribute>
+    <Attribute name="Number">B-01017</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1034" id="Story:1034">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Display Cards by Clipboard</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">19</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01018</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1035" id="Story:1035">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Delete Clipboard</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">0.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">20</Attribute>
+    <Attribute name="Estimate">0.5</Attribute>
+    <Attribute name="Number">B-01019</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1036" id="Story:1036">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Edit Clipboard</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">0.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">18</Attribute>
+    <Attribute name="Estimate">0.5</Attribute>
+    <Attribute name="Number">B-01020</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1037" id="Story:1037">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Remove Card from Clipboard</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">0.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">22</Attribute>
+    <Attribute name="Estimate">0.5</Attribute>
+    <Attribute name="Number">B-01021</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1038" id="Story:1038">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1063" idref="Timebox:1063"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Arrange Cards by Curation Category</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">4</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">23</Attribute>
+    <Attribute name="Estimate">2</Attribute>
+    <Attribute name="Number">B-01022</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 3</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1039" id="Story:1039">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Continuous Scroll Adds Cards</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">1.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">24</Attribute>
+    <Attribute name="Estimate">1.5</Attribute>
+    <Attribute name="Number">B-01023</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1040" id="Story:1040">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Change Visibility Preferences of a Card/Category</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">26</Attribute>
+    <Attribute name="Estimate">3</Attribute>
+    <Attribute name="Number">B-01024</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1041" id="Story:1041">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Add Profile Photo</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">27</Attribute>
+    <Attribute name="Estimate">1.5</Attribute>
+    <Attribute name="Number">B-01025</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1042" id="Story:1042">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1063" idref="Timebox:1063"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Display Landing Page</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">1.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">28</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01026</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 3</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1043" id="Story:1043">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Display Unauthenticated Landing Page Cards</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">3</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">29</Attribute>
+    <Attribute name="Estimate">3</Attribute>
+    <Attribute name="Number">B-01027</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1044" id="Story:1044">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Filter by Button Bar Categories</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">30</Attribute>
+    <Attribute name="Estimate">2</Attribute>
+    <Attribute name="Number">B-01028</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1045" id="Story:1045">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1063" idref="Timebox:1063"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Add/View Interest Category</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">3</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">31</Attribute>
+    <Attribute name="Estimate">0.25</Attribute>
+    <Attribute name="Number">B-01029</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 3</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1046" id="Story:1046">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1063" idref="Timebox:1063"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Edit Interest Category</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">1</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">32</Attribute>
+    <Attribute name="Estimate">0.25</Attribute>
+    <Attribute name="Number">B-01030</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 3</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1049" id="Story:1049">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1063" idref="Timebox:1063"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Remove Interest Category</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">0.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">33</Attribute>
+    <Attribute name="Estimate">0.25</Attribute>
+    <Attribute name="Number">B-01031</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 3</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1050" id="Story:1050">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Add/View Demogrphics Category</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">34</Attribute>
+    <Attribute name="Estimate">2.5</Attribute>
+    <Attribute name="Number">B-01032</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1051" id="Story:1051">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Remove Demographic Category</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">35</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01033</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1052" id="Story:1052">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Edit Demographic Category</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">36</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01034</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1053" id="Story:1053">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1063" idref="Timebox:1063"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Assumes we figure out where to store images&lt;/p&gt;</Attribute>
+    <Attribute name="Name">Add/View Card</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">2</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">37</Attribute>
+    <Attribute name="Estimate">0.25</Attribute>
+    <Attribute name="Number">B-01035</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 3</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1054" id="Story:1054">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1063" idref="Timebox:1063"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Edit Card</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">1</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">38</Attribute>
+    <Attribute name="Estimate">0.25</Attribute>
+    <Attribute name="Number">B-01036</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 3</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1055" id="Story:1055">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1063" idref="Timebox:1063"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Remove Card</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">0.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">39</Attribute>
+    <Attribute name="Estimate">0.25</Attribute>
+    <Attribute name="Number">B-01037</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 3</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1056" id="Story:1056">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1064" idref="Timebox:1064"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show that:&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;If a card has an age group tag that matches a selection then that the card is shown&lt;/li&gt;
+      &lt;li&gt;If a card has no age group tag and an age group is selected then that card is shown&lt;/li&gt;
+      &lt;li&gt;If a card has an age group that does not match those selected then that card is not shown&lt;/li&gt;
+      &lt;li&gt;Age groups are shown as check boxes on the left hand nav&lt;/li&gt;
+      &lt;/ul&gt;</Attribute>
+    <Attribute name="Name">Filter Cards by Age Groups</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">3</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">40</Attribute>
+    <Attribute name="Estimate">3</Attribute>
+    <Attribute name="Number">B-01038</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 4</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1057" id="Story:1057">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1062" idref="Timebox:1062"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show that&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;a User can sign in and create a session on profile health&lt;/li&gt;
+      &lt;li&gt;the user supplies an email and password to sign in&lt;/li&gt;
+      &lt;li&gt;saved filters should be applied immediately&lt;/li&gt;
+      &lt;li&gt;the user's name is displayed up in the top right corner&lt;/li&gt;
+      &lt;/ul&gt;</Attribute>
+    <Attribute name="Name">Authenticate</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">2</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">41</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01039</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 2</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1061" id="Story:1061">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1063" idref="Timebox:1063"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Apply Azul7 assets to cards and left nav</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">1.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">42</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01040</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 3</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1065" id="Story:1065">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Allow Members to Add Topics</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">43</Attribute>
+    <Attribute name="Estimate">2</Attribute>
+    <Attribute name="Number">B-01041</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1066" id="Story:1066">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1064" idref="Timebox:1064"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show that:&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;At some interval an email is sent to members reminding them to log in and view the site&lt;/li&gt;
+      &lt;li&gt;The email will include a link to the site&lt;/li&gt;
+      &lt;li&gt;Members can turn this feature off&lt;/li&gt;
+      &lt;li&gt;The feature is on by default for all members&lt;/li&gt;
+      &lt;/ul&gt;</Attribute>
+    <Attribute name="Name">Email Newsletter to Members</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">3</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">44</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01042</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/134" idref="StoryStatus:134"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 4</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">In Progress</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1067" id="Story:1067">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1064" idref="Timebox:1064"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show that:&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;On "sign in", a member may select "Reset Password"&lt;/li&gt;
+      &lt;li&gt;the member receives an email with a "reset password" link&lt;/li&gt;
+      &lt;li&gt;the link is only valid for a limited amount of configurable time&amp;nbsp;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;&amp;nbsp;&lt;/p&gt;</Attribute>
+    <Attribute name="Name">User Changes Own Password</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">45</Attribute>
+    <Attribute name="Estimate">4</Attribute>
+    <Attribute name="Number">B-01043</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/134" idref="StoryStatus:134"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 4</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">In Progress</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1068" id="Story:1068">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show that:&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;When navigating to a link for a given sponsor, only the sponsored content from that sponsor is shown
+      (Typically link is embedded in sponsor site)&lt;/li&gt;
+      &lt;li&gt;When user accesses site (not from sponsor site) for a given locale and sponsor content exists for that
+      locale then only the sponsored content for that sponsor is shown&lt;/li&gt;
+      &lt;li&gt;When a sponsor cannot be detected from an embedded link or from the locale, or a sponsor does not exist
+      for that locale, then show no sponsored content&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;Note: Non sponsored content is always shown&lt;/p&gt;
+      &lt;p&gt;&amp;nbsp;&lt;/p&gt;</Attribute>
+    <Attribute name="Name">Filter Sponsored Content</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">46</Attribute>
+    <Attribute name="Estimate">5</Attribute>
+    <Attribute name="Number">B-01044</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1069" id="Story:1069">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1064" idref="Timebox:1064"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show that:&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;A member can edit their name, password and notification permissions&lt;/li&gt;
+      &lt;/ul&gt;</Attribute>
+    <Attribute name="Name">Edit Member Profile</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">47</Attribute>
+    <Attribute name="Estimate">2</Attribute>
+    <Attribute name="Number">B-01045</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 4</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1070" id="Story:1070">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1064" idref="Timebox:1064"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Edit Template For Member Emails</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">48</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01046</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/135" idref="StoryStatus:135"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 4</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Done</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1071" id="Story:1071">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1064" idref="Timebox:1064"/>
+    </Relation>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description">&lt;p&gt;Show that:&lt;/p&gt;
+      &lt;ol&gt;
+      &lt;li&gt;Externalize from email address&lt;/li&gt;
+      &lt;li&gt;There is a production heroku enviornment&lt;/li&gt;
+      &lt;li&gt;The application is deployed to prod&lt;/li&gt;
+      &lt;li&gt;The production site is accessible via the proflilehealth domain name (get Brian the heroku production
+      IP)&lt;/li&gt;
+      &lt;li&gt;The heroku email service is bound to profilehealth domain name&lt;/li&gt;
+      &lt;/ol&gt;</Attribute>
+    <Attribute name="Name">Prepare Production Environment</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">49</Attribute>
+    <Attribute name="Estimate"/>
+    <Attribute name="Number">B-01047</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/134" idref="StoryStatus:134"/>
+    </Relation>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name">Iteration 4</Attribute>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">In Progress</Attribute>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1093" id="Story:1093">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Imbedded widget for Partners</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">66</Attribute>
+    <Attribute name="Estimate">5</Attribute>
+    <Attribute name="Number">B-01064</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1094" id="Story:1094">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Exclusive topic filtering for Partners</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">4</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">67</Attribute>
+    <Attribute name="Estimate">4</Attribute>
+    <Attribute name="Number">B-01065</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1095" id="Story:1095">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Card Filtering by Region</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">3</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">68</Attribute>
+    <Attribute name="Estimate">3</Attribute>
+    <Attribute name="Number">B-01066</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1096" id="Story:1096">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Heroku/Go Daddy mail domain setup</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">0.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">69</Attribute>
+    <Attribute name="Estimate">0.5</Attribute>
+    <Attribute name="Number">B-01067</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1047" idref="Theme:1047"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Admin</Attribute>
+    <Attribute name="Parent.Number">FG-01001</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1097" id="Story:1097">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Add Google Analytics to site</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">1</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">70</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Number">B-01068</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1098" id="Story:1098">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Add Visibility Status to Cards</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">0.5</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">71</Attribute>
+    <Attribute name="Estimate">0.5</Attribute>
+    <Attribute name="Number">B-01069</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1099" id="Story:1099">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Add Quality indicator to Card</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">3</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">72</Attribute>
+    <Attribute name="Estimate">3</Attribute>
+    <Attribute name="Number">B-01070</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1100" id="Story:1100">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Support multiple demographic choices across buckets</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate"/>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">73</Attribute>
+    <Attribute name="Estimate">3</Attribute>
+    <Attribute name="Number">B-01071</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Story/1101" id="Story:1101">
+    <Attribute name="AssetType">Story</Attribute>
+    <Relation name="Timebox"/>
+    <Relation name="Customer"/>
+    <Relation name="IdentifiedIn"/>
+    <Relation name="Team"/>
+    <Relation name="Super"/>
+    <Attribute name="Description"/>
+    <Attribute name="Name">Partner Branding (white label)</Attribute>
+    <Attribute name="AssetState">64</Attribute>
+    <Attribute name="DetailEstimate"/>
+    <Attribute name="Reference"/>
+    <Attribute name="ToDo"/>
+    <Attribute name="LastVersion"/>
+    <Attribute name="OriginalEstimate">20</Attribute>
+    <Attribute name="RequestedBy"/>
+    <Attribute name="Value"/>
+    <Attribute name="Order">74</Attribute>
+    <Attribute name="Estimate">20</Attribute>
+    <Attribute name="Number">B-01072</Attribute>
+    <Relation name="Scope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Relation name="Risk"/>
+    <Relation name="Source"/>
+    <Relation name="Priority"/>
+    <Relation name="Status"/>
+    <Relation name="Category"/>
+    <Relation name="Parent">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Theme/1048" idref="Theme:1048"/>
+    </Relation>
+    <Relation name="SecurityScope">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    </Relation>
+    <Attribute name="Benefits"/>
+    <Relation name="SplitFrom"/>
+    <Attribute name="Timebox.Name"/>
+    <Attribute name="Customer.Name"/>
+    <Attribute name="Customer.Nickname"/>
+    <Attribute name="IdentifiedIn.Name"/>
+    <Attribute name="Team.Name"/>
+    <Attribute name="Super.Name"/>
+    <Attribute name="Super.Number"/>
+    <Attribute name="Scope.Name">WhiteWater</Attribute>
+    <Attribute name="Risk.Name"/>
+    <Attribute name="Source.Name"/>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name"/>
+    <Attribute name="Category.Name"/>
+    <Attribute name="Parent.Name">Public Site</Attribute>
+    <Attribute name="Parent.Number">FG-01002</Attribute>
+    <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+    <Attribute name="SplitFrom.Name"/>
+    <Attribute name="SplitFrom.Number"/>
+    <Relation name="CompletedInBuildRuns"/>
+    <Attribute name="CompletedInBuildRuns.Name"/>
+    <Relation name="Owners"/>
+    <Attribute name="Owners.Name"/>
+    <Attribute name="Owners.Nickname"/>
+    <Attribute name="Ideas"/>
+  </Asset>
+</Assets>

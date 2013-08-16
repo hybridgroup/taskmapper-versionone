@@ -13,7 +13,7 @@ module TaskMapper::Provider
           @system_data = {:client => object}
           unless object.is_a? Hash
            hash = {:href => object.href,
-                   :id => object.idref}
+                   :id => object.id}
           else
             hash = object
           end
@@ -28,6 +28,17 @@ module TaskMapper::Provider
         issue.save
         ticket
       end
+
+      def id
+        story_id = self[:id]
+
+        if story_id.index("Story:") != nil
+          story_id.gsub!("Story:", "")
+        end
+
+        story_id.to_i
+      end
+
       
     end
   end

@@ -1,4 +1,6 @@
 require 'rubygems'
+require 'nokogiri'
+require File.expand_path(File.dirname(__FILE__) + '/nokogiri_to_hash')
 require 'active_support'
 require 'active_resource'
 
@@ -10,6 +12,27 @@ require 'active_resource'
 # This library is a small wrapper around the REST interface
 
 module VersiononeAPI
+
+  module NokogiriXmlFormat
+    extend self
+
+    def extension
+      "xml"
+    end
+
+    def mime_type
+      "application/xml"
+    end
+
+    def encode(hash, options={})
+      hash.to_xml(options)
+    end
+
+    def decode(xml)
+      Nokogiri::XML.parse(xml).to_hash('Assets > *')
+    end
+  end
+
   class Error < StandardError; end
   class << self
 
@@ -33,7 +56,7 @@ module VersiononeAPI
   end
 
   class Base < ActiveResource::Base
-    self.format = :xml
+    self.format = NokogiriXmlFormat
     def self.inherited(base)
       VersiononeAPI.resources << base
       class << base
@@ -83,18 +106,10 @@ module VersiononeAPI
         "#{prefix(prefix_options)}Scope/#{URI.escape scope_id}#{query_string(query_options)}"
       end
 
-      def self.instantiate_collection(collection, prefix_options = {})
-        objects = collection["Asset"]
-        objects = [ objects ] if !objects.kind_of?(Array)
-        objects.collect! { |record| instantiate_record(record, prefix_options) }
-      end
-
       def self.instantiate_record(record, prefix_option = {})
-        if record.has_key? 'id'
-          super(record, prefix_option)
-        else
-          super(record["Asset"], prefix_option)
-        end
+        object = record
+        object = object[0] if object.kind_of? Array
+        super(object, prefix_option)
       end
 
       def encode(options={})
@@ -119,20 +134,26 @@ module VersiononeAPI
 
   class Issue < Base
 
-      self.site_format << 'Scope/:id/'
-
       def self.collection_path(prefix_options = {}, query_options = nil)
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-        "#{prefix(prefix_options)}Issues#{query_string(query_options)}"
+        "#{prefix(prefix_options)}Story#{query_string(query_options)}"
       end
 
-      def self.instantiate_collection(collection, prefix_options = {})
-        objects = collection["Asset"]
-        objects = [ objects ] if !objects.kind_of?(Array)
-        objects.collect! { |record| instantiate_record(record, prefix_options) }
+      def self.element_path(id, prefix_options = {}, query_options = nil)
+        scope_id = id.to_s
+        scope_id.gsub!("Story:", "")
+        prefix_options, query_options = split_options(prefix_options) if query_options.nil?
+        "#{prefix(prefix_options)}Story/#{URI.escape scope_id}#{query_string(query_options)}"
       end
 
-      #def scope_id
+      def self.instantiate_record(record, prefix_option = {})
+        object = record
+        object = object[0] if object.kind_of? Array
+        super(object, prefix_options)
+      end
+
+
+    #def scope_id
       #  scope_id = attributes[:Relation][4].attributes["Asset"].attributes[:idref]
       #  scope_id.gsub!("Scope:", "")
       #end
