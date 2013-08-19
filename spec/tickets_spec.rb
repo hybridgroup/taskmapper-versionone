@@ -4,11 +4,9 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
   before(:all) do
     headers = headers_for('admin', 'admin')
     ActiveResource::HttpMock.respond_to do |mock|
-      mock.get '/Trial30/rest-1.v1/Data/Scope/1009', headers, fixture_for('Scope'), 200
-      # TODO correct the URI once the tickets in a particular project are possible
-      mock.get '/Trial30/rest-1.v1/Data/Story?id=1009', headers, fixture_for('Stories'), 200
-      mock.get '/Trial30/rest-1.v1/Data/Story?project_id=1009', headers, fixture_for('Stories'), 200
-      mock.get '/Trial30/rest-1.v1/Data/Story/1013?project_id=1009', headers, fixture_for('Story1013'), 200
+      mock.get '/Trial30/rest-1.v1/Data/Scope/1009', headers, fixture_for('Scope1009'), 200
+      mock.get '/Trial30/rest-1.v1/Data/Story?where=Scope%3D%27Scope%3A1009%27', headers, fixture_for('Stories'), 200
+      mock.get '/Trial30/rest-1.v1/Data/Story/1013?where=Scope%3D%27Scope%3A1009%27', headers, fixture_for('Story1013'), 200
     end
     @project_id = 1009
     @ticket_id = 1013
@@ -56,6 +54,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
   end
 
   it "should be able to update and save a ticket" do
+    pending("using posts in the api access")
     @ticket = @project.ticket(@ticket_id)
     #@ticket.save.should == nil
     @ticket.description = 'hello'
@@ -63,6 +62,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
   end
 
   it "should be able to update a ticket to add a label and save the ticket" do
+    pending("using posts in the api access")
     @ticket = @project.ticket(@ticket_id)
     @ticket.labels = 'sample label'
     @ticket.labels.should == 'sample label'
@@ -70,6 +70,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
   end
 
   it "should be able to create a ticket" do
+    pending("using posts in the api access")
     @ticket = @project.ticket!(:title => 'Ticket #12', :description => 'Body')
     @ticket.should be_an_instance_of(@klass)
   end
@@ -90,10 +91,11 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
 
   it "should return the requested_by field" do
     @ticket = @project.ticket(@ticket_id)
-    @ticket.requestor.should == 'Hong Quach'
+    @ticket.requestor.should == 'joe.user@example.com'
   end
 
   it "should be able to update a ticket" do
+    pending("using posts in the api access")
     @ticket = @project.ticket(@ticket_id)
     @ticket.title = "Hello World"
     @ticket.save.should be_true

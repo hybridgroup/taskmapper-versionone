@@ -18,7 +18,7 @@ class Nokogiri::XML::Node
   def collect_nodes
     { self.name.to_sym => self.collect_attributes.merge({:children => collect_children }) }
   end
-  
+
   # Collect Attributes of a given node.
   def collect_attributes
     output = {}
@@ -28,6 +28,14 @@ class Nokogiri::XML::Node
   
   # Priest method.
   def collect_children
-    self.element_children.collect { |child| child.collect_nodes } || []
+    self.children
+      .find_all { |child| !child.text? || !child.content.strip.empty?}
+      .collect { |child|
+        if child.text?
+          { :content => self.content.strip }
+        else
+          child.collect_nodes
+        end
+      } || []
   end
 end

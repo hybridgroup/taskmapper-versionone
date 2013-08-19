@@ -29,8 +29,56 @@ module VersiononeAPI
     end
 
     def decode(xml)
-      Nokogiri::XML.parse(xml).to_hash('Assets > *')
+      Nokogiri::XML.parse(xml).to_hash('*')
     end
+  end
+
+  module HasAssets
+
+    def find_child_with_name(child_type, name)
+      self.Asset.attributes[:children].find_all { |child|
+        !child.attributes[child_type].nil?
+      }.collect { |child|
+        child.attributes[child_type]
+      }.find {|attr|
+        attr.attributes[:name].first == name
+      }.attributes[:children]
+    end
+
+    def find_attribute(attribute_name)
+      find_child_with_name(:Attribute, attribute_name)
+    end
+
+    def find_text_attribute(attribute_name)
+      children = self.find_attribute(attribute_name)
+      if children.empty?
+        ''
+      else
+        children.first.attributes[:content]
+      end
+    end
+
+    def find_value_attribute(attribute_name)
+      children = self.find_attribute(attribute_name)
+      if children.empty?
+        ''
+      else
+        children.first.attributes[:Value].children.first.attributes[:content]
+      end
+    end
+
+    def find_relation_id(name)
+      relation = find_child_with_name(:Relation, name)
+      if(!relation.empty?)
+        relation.first.attributes[:Asset].attributes[:idref].first
+      end
+
+    end
+
+    def strip_asset_type(id, asset_type)
+      id.gsub!("#{asset_type}:", '')
+    end
+
   end
 
   class Error < StandardError; end
@@ -65,6 +113,18 @@ module VersiononeAPI
       base.site_format = '%s'
       super
     end
+
+    def self.instantiate_collection(collection, prefix_options = {})
+      objects = collection.find {|x| x.has_key? :Assets }[:Assets]
+      objects[:children].collect! { |record| instantiate_record(record, prefix_options) }
+    end
+
+    def self.instantiate_record(record, prefix_option = {})
+      object = record
+      object = object.first if object.kind_of? Array
+      super(object, prefix_option)
+    end
+
   end
 
    # Find projects
@@ -106,12 +166,6 @@ module VersiononeAPI
         "#{prefix(prefix_options)}Scope/#{URI.escape scope_id}#{query_string(query_options)}"
       end
 
-      def self.instantiate_record(record, prefix_option = {})
-        object = record
-        object = object[0] if object.kind_of? Array
-        super(object, prefix_option)
-      end
-
       def encode(options={})
         val = ''
         val += '<Asset>'
@@ -145,13 +199,6 @@ module VersiononeAPI
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
         "#{prefix(prefix_options)}Story/#{URI.escape scope_id}#{query_string(query_options)}"
       end
-
-      def self.instantiate_record(record, prefix_option = {})
-        object = record
-        object = object[0] if object.kind_of? Array
-        super(object, prefix_options)
-      end
-
 
     #def scope_id
       #  scope_id = attributes[:Relation][4].attributes["Asset"].attributes[:idref]

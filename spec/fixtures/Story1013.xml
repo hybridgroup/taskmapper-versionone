@@ -16,7 +16,7 @@
   <Attribute name="ToDo"/>
   <Attribute name="LastVersion"/>
   <Attribute name="OriginalEstimate"/>
-  <Attribute name="RequestedBy"/>
+  <Attribute name="RequestedBy">joe.user@example.com</Attribute>
   <Attribute name="Value"/>
   <Attribute name="Order">1</Attribute>
   <Attribute name="Estimate">1</Attribute>
@@ -44,7 +44,7 @@
   <Attribute name="Team.Name"/>
   <Attribute name="Super.Name"/>
   <Attribute name="Super.Number"/>
-  <Attribute name="Scope.Name">WhiteWater</Attribute>
+  <Attribute name="Scope.Name">MyProjectName</Attribute>
   <Attribute name="Risk.Name"/>
   <Attribute name="Source.Name"/>
   <Attribute name="Priority.Name"/>
@@ -52,7 +52,7 @@
   <Attribute name="Category.Name"/>
   <Attribute name="Parent.Name"/>
   <Attribute name="Parent.Number"/>
-  <Attribute name="SecurityScope.Name">WhiteWater</Attribute>
+  <Attribute name="SecurityScope.Name">MyProjectName</Attribute>
   <Attribute name="SplitFrom.Name"/>
   <Attribute name="SplitFrom.Number"/>
   <Relation name="CompletedInBuildRuns"/>

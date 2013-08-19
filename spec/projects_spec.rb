@@ -7,7 +7,7 @@ describe "TaskMapper::Versionone::Project" do
     @project_id = 1009
     ActiveResource::HttpMock.respond_to do |mock|
       mock.get '/Trial30/rest-1.v1/Data/Scope', headers, fixture_for('Scope'), 200
-      mock.get '/Trial30/rest-1.v1/Data/Scope/1009', headers, fixture_for('Scope'), 200
+      mock.get '/Trial30/rest-1.v1/Data/Scope/1009', headers, fixture_for('Scope1009'), 200
     end
   end
 
@@ -52,6 +52,13 @@ describe "TaskMapper::Versionone::Project" do
     it "should be able to find a project by attributes" do
       @taskmapper.project(:id => @project_id).id.should == @project_id
       @taskmapper.project(:id => @project_id).should be_an_instance_of(@klass)
+    end
+
+    it "should have required fields" do
+      project = @taskmapper.project(@project_id)
+
+      project.id.should == @project_id
+      project.name.should == 'MyProjectName'
     end
 
     it "should be able to update and save a project" do
