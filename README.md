@@ -1,6 +1,8 @@
 = taskmapper-versioonne
 
-Description goes here.
+This is a provider for [taskmapper](http://ticketrb.com). It provides interoperability with [Version One](http://www.versionone.com/) and
+its issue tracking system through the taskmapper gem.
+
 
 == Contributing to taskmapper-versioonne
  
