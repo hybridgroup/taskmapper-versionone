@@ -45,7 +45,7 @@ module TaskMapper::Provider
       end
 
       def id
-        scope_id = self[:id]
+        scope_id = self['Asset'].attributes[:id][0]
 
         if scope_id.index("Scope:") != nil
           scope_id.gsub!("Scope:", "")
