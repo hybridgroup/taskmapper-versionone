@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Asset href="/partner_DevJam/rest-1.v1/Data/Story/1013" id="Story:1013">
+  <Attribute name="AssetType">Story</Attribute>
+  <Relation name="Timebox">
+    <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
+  </Relation>
+  <Relation name="Customer"/>
+  <Relation name="IdentifiedIn"/>
+  <Relation name="Team"/>
+  <Relation name="Super"/>
+  <Attribute name="Description"/>
+  <Attribute name="Name">Set up Heroku</Attribute>
+  <Attribute name="AssetState">128</Attribute>
+  <Attribute name="DetailEstimate"/>
+  <Attribute name="Reference"/>
+  <Attribute name="ToDo"/>
+  <Attribute name="LastVersion"/>
+  <Attribute name="OriginalEstimate"/>
+  <Attribute name="RequestedBy">joe.user@example.com</Attribute>
+  <Attribute name="Value"/>
+  <Attribute name="Order">1</Attribute>
+  <Attribute name="Estimate">1</Attribute>
+  <Attribute name="Number">B-01001</Attribute>
+  <Relation name="Scope">
+    <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+  </Relation>
+  <Relation name="Risk"/>
+  <Relation name="Source"/>
+  <Relation name="Priority"/>
+  <Relation name="Status">
+    <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+  </Relation>
+  <Relation name="Category"/>
+  <Relation name="Parent"/>
+  <Relation name="SecurityScope">
+    <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+  </Relation>
+  <Attribute name="Benefits"/>
+  <Relation name="SplitFrom"/>
+  <Attribute name="Timebox.Name">Iteration 0</Attribute>
+  <Attribute name="Customer.Name"/>
+  <Attribute name="Customer.Nickname"/>
+  <Attribute name="IdentifiedIn.Name"/>
+  <Attribute name="Team.Name"/>
+  <Attribute name="Super.Name"/>
+  <Attribute name="Super.Number"/>
+  <Attribute name="Scope.Name">MyProjectName</Attribute>
+  <Attribute name="Risk.Name"/>
+  <Attribute name="Source.Name"/>
+  <Attribute name="Priority.Name"/>
+  <Attribute name="Status.Name">Accepted</Attribute>
+  <Attribute name="Category.Name"/>
+  <Attribute name="Parent.Name"/>
+  <Attribute name="Parent.Number"/>
+  <Attribute name="SecurityScope.Name">MyProjectName</Attribute>
+  <Attribute name="SplitFrom.Name"/>
+  <Attribute name="SplitFrom.Number"/>
+  <Relation name="CompletedInBuildRuns"/>
+  <Attribute name="CompletedInBuildRuns.Name"/>
+  <Relation name="Owners">
+    <Asset href="/partner_DevJam/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
+  </Relation>
+  <Attribute name="Owners.Name">
+    <Value>jason.stull@devjam.com</Value>
+  </Attribute>
+  <Attribute name="Owners.Nickname">
+    <Value>jason.stull</Value>
+  </Attribute>
+  <Attribute name="Ideas"/>
+</Asset>

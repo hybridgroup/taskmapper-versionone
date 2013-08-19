@@ -1,6 +1,7 @@
 module TaskMapper::Provider
   module Versionone
     class Project < TaskMapper::Provider::Base::Project
+      include VersiononeAPI::HasAssets
       API = VersiononeAPI::Scope # The class to access the api's projects
       # declare needed overloaded methods here
 
@@ -19,15 +20,11 @@ module TaskMapper::Provider
             #options[0].merge!(:params => {:id => id})
             super(*options)
           elsif options.empty?
-            tickets = VersiononeAPI::Issue.find(:all, :params => {:id => id}).collect { |ticket| TaskMapper::Provider::Versionone::Ticket.new ticket }
+            tickets = VersiononeAPI::Issue.find(:all, :params => {:where => "Scope='Scope:#{id}'" }).collect { |ticket| TaskMapper::Provider::Versionone::Ticket.new ticket }
           else
             super(*options)
           end
       end  
-
-      def name
-        self[:Attribute][2]
-      end
 
       def ticket!(*options)
         options[0].merge!(:id => id) if options.first.is_a?(Hash)
@@ -45,7 +42,7 @@ module TaskMapper::Provider
       end
 
       def id
-        scope_id = self[:id]
+        scope_id = self.Asset.attributes[:id].first
 
         if scope_id.index("Scope:") != nil
           scope_id.gsub!("Scope:", "")
@@ -53,6 +50,12 @@ module TaskMapper::Provider
 
         scope_id.to_i
       end
+
+      def name
+        find_text_attribute 'Name'
+      end
+
+
 
     end
   end
