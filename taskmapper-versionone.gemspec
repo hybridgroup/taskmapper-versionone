@@ -4,7 +4,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "taskmapper-versioonne"
+  s.name = "taskmapper-versionone"
   s.version = "0.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -40,9 +40,10 @@ Gem::Specification.new do |s|
     "spec/projects_spec.rb",
     "spec/spec_helper.rb",
     "spec/taskmapper-versionone_spec.rb",
-    "spec/tickets_spec.rb"
+    "spec/tickets_spec.rb",
+    "taskmapper-versioonne.gemspec"
   ]
-  s.homepage = "http://github.com/hybridgroup/taskmapper-versioonne"
+  s.homepage = "http://github.com/hybridgroup/taskmapper-versionone"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "2.0.7"
