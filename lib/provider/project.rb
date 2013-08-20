@@ -9,6 +9,20 @@ module TaskMapper::Provider
       alias_method :stories, :tickets
       alias_method :story, :ticket
 
+      def initialize(*object)
+        if object.first
+          object = object.first
+          @system_data = {:client => object}
+            hash = {:id => find_asset_id(object, 'Scope'),
+                    :description => find_text_attribute(object, 'Description'),
+                    :created_at => '',
+                    :updated_at => '',
+                    :name => find_text_attribute(object, 'Name'),
+                    :owner => find_text_attribute(object, 'Owner.Name')}
+          super hash
+        end
+      end
+
       # copy from this.copy(that) copies that into this
       
       def self.find_by_attributes(attributes = {})
@@ -40,22 +54,6 @@ module TaskMapper::Provider
           end
         end
       end
-
-      def id
-        scope_id = self.Asset.attributes[:id].first
-
-        if scope_id.index("Scope:") != nil
-          scope_id.gsub!("Scope:", "")
-        end
-
-        scope_id.to_i
-      end
-
-      def name
-        find_text_attribute 'Name'
-      end
-
-
 
     end
   end

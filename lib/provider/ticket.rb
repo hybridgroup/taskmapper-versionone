@@ -10,6 +10,26 @@ module TaskMapper::Provider
 
       attr_accessor :prefix_options
 
+      def initialize(*object)
+        if object.first
+          object = object.first
+          @system_data = {:client => object}
+          hash = {:id => find_asset_id(object, 'Story'),
+                  :href => find_asset_href(object),
+                  :title => find_text_attribute(object, 'Name'),
+                  :description => find_text_attribute(object, 'Description'),
+                  :requestor => find_text_attribute(object, 'RequestedBy'),
+                  :project_id => strip_asset_type(find_relation_id(object, 'Scope'), 'Scope'),
+                  :priority => find_text_attribute(object, 'Priority.Name'),
+                  :status => find_text_attribute(object, 'Status.Name'),
+                  :assignee => find_value_attribute(object, 'Owners.Name') ,
+                  # Unsupported by Version One
+                  :created_at => '',
+                  :updated_at => ''}
+          super hash
+        end
+      end
+
       def self.create(*options)
         issue = API.new(*options)
         ticket = self.new issue
@@ -38,67 +58,10 @@ module TaskMapper::Provider
         end
       end
 
-      def id
-        scope_id = self['Asset'].attributes[:id].first
-
-        if scope_id.index("Story:") != nil
-          scope_id.gsub!("Story:", "")
-        end
-
-        scope_id.to_i
-      end
-
-      def href
-        self['Asset'].attributes[:href].first
-      end
-
-      def title
-        find_text_attribute 'Name'
-      end
-
-      def description
-        find_text_attribute 'Description'
-      end
-
-      def requestor
-        find_text_attribute 'RequestedBy'
-      end
-
-      def assignee
-        find_value_attribute 'Owners.Name'
-      end
-
-      def status
-        find_text_attribute 'Status.Name'
-      end
 
       def resolution
         status
       end
-
-      def priority
-        find_text_attribute 'Priority.Name'
-      end
-
-      def project_id
-        id = find_relation_id('Scope')
-        if !id.nil?
-          strip_asset_type(id, 'Scope')
-        end
-      end
-
-      # Unsupported by Version One
-
-      def created_at
-        ''
-      end
-
-      def updated_at
-        ''
-      end
-
-
-
 
     end
   end

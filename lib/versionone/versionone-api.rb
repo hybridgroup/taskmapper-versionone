@@ -35,8 +35,8 @@ module VersiononeAPI
 
   module HasAssets
 
-    def find_child_with_name(child_type, name)
-      self.Asset.attributes[:children].find_all { |child|
+    def find_child_with_name(asset_container, child_type, name)
+      asset(asset_container).attributes[:children].find_all { |child|
         !child.attributes[child_type].nil?
       }.collect { |child|
         child.attributes[child_type]
@@ -45,12 +45,12 @@ module VersiononeAPI
       }.attributes[:children]
     end
 
-    def find_attribute(attribute_name)
-      find_child_with_name(:Attribute, attribute_name)
+    def find_attribute(asset_container, attribute_name)
+      find_child_with_name(asset_container, :Attribute, attribute_name)
     end
 
-    def find_text_attribute(attribute_name)
-      children = self.find_attribute(attribute_name)
+    def find_text_attribute(asset_container, attribute_name)
+      children = find_attribute(asset_container, attribute_name)
       if children.empty?
         ''
       else
@@ -58,8 +58,8 @@ module VersiononeAPI
       end
     end
 
-    def find_value_attribute(attribute_name)
-      children = self.find_attribute(attribute_name)
+    def find_value_attribute(asset_container, attribute_name)
+      children = find_attribute(asset_container, attribute_name)
       if children.empty?
         ''
       else
@@ -67,16 +67,28 @@ module VersiononeAPI
       end
     end
 
-    def find_relation_id(name)
-      relation = find_child_with_name(:Relation, name)
+    def find_relation_id(asset_container, name)
+      relation = find_child_with_name(asset_container, :Relation, name)
       if(!relation.empty?)
         relation.first.attributes[:Asset].attributes[:idref].first
       end
 
     end
 
+    def find_asset_href(asset_container)
+      asset(asset_container).attributes[:href]
+    end
+
+    def find_asset_id(asset_container, asset_type)
+      strip_asset_type(asset(asset_container).attributes[:id].first, asset_type).to_i
+    end
+
     def strip_asset_type(id, asset_type)
       id.gsub!("#{asset_type}:", '')
+    end
+
+    def asset(asset_container)
+      asset_container.attributes[:Asset]
     end
 
   end
