@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/hybridgroup/taskmapper-versioonne"
   gem.license = "MIT"
   gem.summary = %Q{TaskMapper provider for accessing VersionOne}
-  gem.description = %Q{TaskMapper provider for accessing VersionOne}
+  gem.description = %Q{TaskMapper provider for accessing VersionOne.}
   gem.email = "george.rafael@gmail.com"
   gem.authors = ["Rafael George"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
@@ -39,7 +39,7 @@ end
 
 task :default => :spec
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
