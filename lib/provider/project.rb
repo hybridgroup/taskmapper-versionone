@@ -13,12 +13,16 @@ module TaskMapper::Provider
         if object.first
           object = object.first
           @system_data = {:client => object}
+          unless object.is_a? Hash
             hash = {:id => find_asset_id(object, 'Scope'),
                     :description => find_text_attribute(object, 'Description'),
                     :created_at => '',
                     :updated_at => '',
                     :name => find_text_attribute(object, 'Name'),
                     :owner => find_text_attribute(object, 'Owner.Name')}
+          else
+            hash = object
+          end
           super hash
         end
       end
