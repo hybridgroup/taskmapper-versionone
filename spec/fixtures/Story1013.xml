@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Asset href="/partner_DevJam/rest-1.v1/Data/Story/1013" id="Story:1013">
+<Asset href="/Trial30/rest-1.v1/Data/Story/1013" id="Story:1013">
   <Attribute name="AssetType">Story</Attribute>
   <Relation name="Timebox">
-    <Asset href="/partner_DevJam/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
+    <Asset href="/Trial30/rest-1.v1/Data/Timebox/1022" idref="Timebox:1022"/>
   </Relation>
   <Relation name="Customer"/>
   <Relation name="IdentifiedIn"/>
@@ -22,18 +22,18 @@
   <Attribute name="Estimate">1</Attribute>
   <Attribute name="Number">B-01001</Attribute>
   <Relation name="Scope">
-    <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    <Asset href="/Trial30/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
   </Relation>
   <Relation name="Risk"/>
   <Relation name="Source"/>
   <Relation name="Priority"/>
   <Relation name="Status">
-    <Asset href="/partner_DevJam/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
+    <Asset href="/Trial30/rest-1.v1/Data/StoryStatus/137" idref="StoryStatus:137"/>
   </Relation>
   <Relation name="Category"/>
   <Relation name="Parent"/>
   <Relation name="SecurityScope">
-    <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
+    <Asset href="/Trial30/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
   </Relation>
   <Attribute name="Benefits"/>
   <Relation name="SplitFrom"/>
@@ -58,13 +58,13 @@
   <Relation name="CompletedInBuildRuns"/>
   <Attribute name="CompletedInBuildRuns.Name"/>
   <Relation name="Owners">
-    <Asset href="/partner_DevJam/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
+    <Asset href="/Trial30/rest-1.v1/Data/Member/1006" idref="Member:1006"/>
   </Relation>
   <Attribute name="Owners.Name">
-    <Value>jason.stull@devjam.com</Value>
+    <Value>owner@example.com</Value>
   </Attribute>
   <Attribute name="Owners.Nickname">
-    <Value>jason.stull</Value>
+    <Value>Joe Owner</Value>
   </Attribute>
   <Attribute name="Ideas"/>
 </Asset>
