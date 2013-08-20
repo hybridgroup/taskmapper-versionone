@@ -41,7 +41,7 @@ Gem::Specification.new do |s|
     "spec/spec_helper.rb",
     "spec/taskmapper-versionone_spec.rb",
     "spec/tickets_spec.rb",
-    "taskmapper-versioonne.gemspec"
+    "taskmapper-versionone.gemspec"
   ]
   s.homepage = "http://github.com/hybridgroup/taskmapper-versionone"
   s.licenses = ["MIT"]
