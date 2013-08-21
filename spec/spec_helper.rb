@@ -17,6 +17,13 @@ def headers_for(username, password)
       'Authorization' => "Basic #{Base64.encode64(username + ':' + password)}".strip,
       'Accept' => 'application/xml'
   }
+  end
+
+def post_headers_for(username, password)
+  return {
+      'Authorization' => "Basic #{Base64.encode64(username + ':' + password)}".strip,
+      'Content-Type' => 'application/xml'
+  }
 end
 
 def fixture_for(name, format = 'xml')

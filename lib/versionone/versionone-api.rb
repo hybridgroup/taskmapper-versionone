@@ -36,13 +36,13 @@ module VersiononeAPI
   module HasAssets
 
     def find_child_with_name(asset_container, child_type, name)
-      asset(asset_container).attributes[:children].find_all { |child|
-        !child.attributes[child_type].nil?
+      asset(asset_container)[:children].find_all { |child|
+        !child[child_type].nil?
       }.collect { |child|
-        child.attributes[child_type]
+        child[child_type]
       }.find {|attr|
-        attr.attributes[:name].first == name
-      }.attributes[:children]
+        attr[:name].first == name
+      }[:children]
     end
 
     def find_attribute(asset_container, attribute_name)
@@ -54,7 +54,7 @@ module VersiononeAPI
       if children.empty?
         ''
       else
-        children.first.attributes[:content]
+        children.first[:content]
       end
     end
 
@@ -63,24 +63,24 @@ module VersiononeAPI
       if children.empty?
         ''
       else
-        children.first.attributes[:Value].children.first.attributes[:content]
+        children.first[:Value][:children].first[:content]
       end
     end
 
     def find_relation_id(asset_container, name)
       relation = find_child_with_name(asset_container, :Relation, name)
       if(!relation.empty?)
-        relation.first.attributes[:Asset].attributes[:idref].first
+        relation.first[:Asset][:idref].first
       end
 
     end
 
     def find_asset_href(asset_container)
-      asset(asset_container).attributes[:href]
+      asset(asset_container)[:href]
     end
 
     def find_asset_id(asset_container, asset_type)
-      strip_asset_type(asset(asset_container).attributes[:id].first, asset_type).to_i
+      strip_asset_type(asset(asset_container)[:id].first, asset_type).to_i
     end
 
     def strip_asset_type(id, asset_type)
@@ -88,7 +88,7 @@ module VersiononeAPI
     end
 
     def asset(asset_container)
-      asset_container.attributes[:Asset]
+      asset_container[:Asset]
     end
 
   end
@@ -126,18 +126,39 @@ module VersiononeAPI
       super
     end
 
+    def encode(options={})
+      val = ''
+      val += '<Asset>'
+      attributes.each_pair do |key, value|
+        val += "<Attribute name='#{key}' act='set'>#{value}</Attribute>"
+      end
+      val += '</Asset>'
+    end
+
     def self.instantiate_collection(collection, prefix_options = {})
       objects = collection.find {|x| x.has_key? :Assets }[:Assets]
       objects[:children].collect! { |record| instantiate_record(record, prefix_options) }
     end
 
-    def self.instantiate_record(record, prefix_option = {})
-      object = record
-      object = object.first if object.kind_of? Array
-      super(object, prefix_option)
+    def update
+      connection.post(element_path(prefix_options), encode, self.class.headers).tap do |response|
+        load_attributes_from_response(response)
+      end
     end
 
-  end
+    def load_attributes_from_response(response)
+      if (response_code_allows_body?(response.code) &&
+          (response['Content-Length'].nil? || response['Content-Length'] != "0") &&
+          !response.body.nil? && response.body.strip.size > 0)
+        decoded = self.class.format.decode(response.body)
+        decoded = decoded.first if decoded.is_a? Array
+
+        load(decoded, true)
+        @persisted = true
+      end
+    end
+
+ end
 
    # Find projects
   #
@@ -164,6 +185,7 @@ module VersiononeAPI
   #
 
   class Scope < Base
+      extend HasAssets
 
       def self.collection_path(prefix_options = {}, query_options = nil)
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
@@ -178,13 +200,19 @@ module VersiononeAPI
         "#{prefix(prefix_options)}Scope/#{URI.escape scope_id}#{query_string(query_options)}"
       end
 
-      def encode(options={})
-        val = ''
-        val += '<Asset>'
-        attributes.each_pair do |key, value|
-          val += "<Attribute name='#{key}' act='set'>#{value}</Attribute>"
-        end
-        val += '</Asset>'
+
+      def self.instantiate_record(record, prefix_option = {})
+        object = record
+        object = object.first if object.kind_of? Array
+
+        simplified = {:id => find_asset_id(object, 'Scope'),
+         :description => find_text_attribute(object, 'Description'),
+         :created_at => '',
+         :updated_at => '',
+         :name => find_text_attribute(object, 'Name'),
+         :owner => find_text_attribute(object, 'Owner.Name')}
+
+        super(simplified, prefix_option)
       end
 
       def tickets(options = {})
@@ -199,6 +227,7 @@ module VersiononeAPI
   end
 
   class Issue < Base
+    extend HasAssets
 
       def self.collection_path(prefix_options = {}, query_options = nil)
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
@@ -212,10 +241,26 @@ module VersiononeAPI
         "#{prefix(prefix_options)}Story/#{URI.escape scope_id}#{query_string(query_options)}"
       end
 
-    #def scope_id
-      #  scope_id = attributes[:Relation][4].attributes["Asset"].attributes[:idref]
-      #  scope_id.gsub!("Scope:", "")
-      #end
+
+    def self.instantiate_record(record, prefix_option = {})
+      object = record
+      object = object.first if object.kind_of? Array
+
+      simplified = {:id => find_asset_id(object, 'Story'),
+                         :href => find_asset_href(object),
+                         :title => find_text_attribute(object, 'Name'),
+                         :description => find_text_attribute(object, 'Description'),
+                         :requestor => find_text_attribute(object, 'RequestedBy'),
+                         :project_id => strip_asset_type(find_relation_id(object, 'Scope'), 'Scope'),
+                         :priority => find_text_attribute(object, 'Priority.Name'),
+                         :status => find_text_attribute(object, 'Status.Name'),
+                         :assignee => find_value_attribute(object, 'Owners.Name') ,
+                         # Unsupported by Version One
+                         :created_at => '',
+                         :updated_at => ''}
+
+      super(simplified, prefix_option)
+    end
 
   end
 

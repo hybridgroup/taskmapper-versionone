@@ -1,31 +1,12 @@
 module TaskMapper::Provider
   module Versionone
     class Project < TaskMapper::Provider::Base::Project
-      include VersiononeAPI::HasAssets
       API = VersiononeAPI::Scope # The class to access the api's projects
       # declare needed overloaded methods here
 
       attr_accessor :prefix_options
       alias_method :stories, :tickets
       alias_method :story, :ticket
-
-      def initialize(*object)
-        if object.first
-          object = object.first
-          @system_data = {:client => object}
-          unless object.is_a? Hash
-            hash = {:id => find_asset_id(object, 'Scope'),
-                    :description => find_text_attribute(object, 'Description'),
-                    :created_at => '',
-                    :updated_at => '',
-                    :name => find_text_attribute(object, 'Name'),
-                    :owner => find_text_attribute(object, 'Owner.Name')}
-          else
-            hash = object
-          end
-          super hash
-        end
-      end
 
       # copy from this.copy(that) copies that into this
       

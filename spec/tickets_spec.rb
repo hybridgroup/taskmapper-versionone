@@ -8,6 +8,18 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
       mock.get '/Trial30/rest-1.v1/Data/Story?where=Scope%3D%27Scope%3A1009%27', headers, fixture_for('Stories'), 200
       mock.get '/Trial30/rest-1.v1/Data/Story/1013?where=Scope%3D%27Scope%3A1009%27', headers, fixture_for('Story1013'), 200
     end
+
+    request = ActiveResource::Request.new(:post,
+                                          path = '/Trial30/rest-1.v1/Data/Story/1013',
+                                          body = "<Asset><Attribute name='Name' act='set'>Hello World</Attribute></Asset>",
+                                          request_headers = post_headers_for('admin', 'admin'))
+    response = ActiveResource::Response.new(body = fixture_for('StoryTitleUpdate'),
+                                            status = 200,
+                                            {})
+
+
+    ActiveResource::HttpMock.responses << [request, response]
+
     @project_id = 1009
     @ticket_id = 1013
   end
@@ -95,7 +107,6 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
   end
 
   it "should be able to update a ticket" do
-    pending("using posts in the api access")
     @ticket = @project.ticket(@ticket_id)
     @ticket.title = "Hello World"
     @ticket.save.should be_true
