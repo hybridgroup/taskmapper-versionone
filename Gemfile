@@ -1,5 +1,5 @@
 source "http://rubygems.org"
-gem "taskmapper", "~> 0.8" 
+gem 'taskmapper'
 gem 'nokogiri'
 
 group :development do
