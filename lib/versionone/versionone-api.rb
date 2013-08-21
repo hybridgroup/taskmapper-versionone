@@ -51,20 +51,12 @@ module VersiononeAPI
 
     def find_text_attribute(asset_container, attribute_name)
       children = find_attribute(asset_container, attribute_name)
-      if children.empty?
-        ''
-      else
-        children.first[:content]
-      end
+      !children.empty? ? children.first[:content] : ''
     end
 
     def find_value_attribute(asset_container, attribute_name)
       children = find_attribute(asset_container, attribute_name)
-      if children.empty?
-        ''
-      else
-        children.first[:Value][:children].first[:content]
-      end
+      !children.empty? ? children.first[:Value][:children].first[:content] : ''
     end
 
     def find_relation_id(asset_container, name)
@@ -117,6 +109,8 @@ module VersiononeAPI
 
   class Base < ActiveResource::Base
     self.format = NokogiriXmlFormat
+
+
     def self.inherited(base)
       VersiononeAPI.resources << base
       class << base
@@ -130,9 +124,19 @@ module VersiononeAPI
       val = ''
       val += '<Asset>'
       attributes.each_pair do |key, value|
-        val += "<Attribute name='#{key}' act='set'>#{value}</Attribute>"
+
+        if(key == 'project_id')
+          val += "<Relation name='Scope' act='set'><Asset idref='Scope:#{value}' /></Relation>"
+        else
+          val += "<Attribute name='#{mappedField(key)}' act='set'>#{value}</Attribute>"
+        end
+
       end
       val += '</Asset>'
+    end
+
+    def mappedField(key)
+      key
     end
 
     def self.instantiate_collection(collection, prefix_options = {})
@@ -215,6 +219,16 @@ module VersiononeAPI
         super(simplified, prefix_option)
       end
 
+      MAPPED_FIELDS = {
+          'name' => 'Name',
+          'description' => 'Description',
+          'owner' => 'Owner.Name'
+      }
+
+      def mappedField(key)
+        MAPPED_FIELDS[key] || key
+      end
+
       def tickets(options = {})
         Issue.find(:all, :params => options.update(:scope_id => scope_id))
       end
@@ -260,6 +274,26 @@ module VersiononeAPI
                          :updated_at => ''}
 
       super(simplified, prefix_option)
+    end
+
+    # Takes a response from a typical create post and pulls the ID out
+    def id_from_response(response)
+      decoded = self.class.format.decode(response.body).first
+      self.class.find_asset_id(decoded, 'Story')
+
+    end
+
+    MAPPED_FIELDS = {
+        'title' => 'Name',
+        'description' => 'Description',
+        'requestor' => 'RequestedBy',
+        'priority' => 'Priority.Name',
+        'status' => 'Status.Name',
+        'assignee' => 'Owners.Name'
+    }
+
+    def mappedField(key)
+      MAPPED_FIELDS[key] || key
     end
 
   end

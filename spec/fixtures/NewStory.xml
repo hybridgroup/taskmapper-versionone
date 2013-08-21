@@ -1,0 +1,7 @@
+<Asset href="/VersionOne/rest-1.v1/Data/Story/1072/214" id="Story:1072:214">
+  <Attribute name="Name">Ticket #12</Attribute>
+  <Attribute name="Description">Body</Attribute>
+  <Relation name="Scope">
+    <Asset href="/VersionOne.Web/rest-1.v1/Data/Scope/0" idref="Scope:1009" />
+  </Relation>
+</Asset>

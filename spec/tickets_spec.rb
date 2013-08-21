@@ -9,16 +9,28 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
       mock.get '/Trial30/rest-1.v1/Data/Story/1013?where=Scope%3D%27Scope%3A1009%27', headers, fixture_for('Story1013'), 200
     end
 
-    request = ActiveResource::Request.new(:post,
+    # Updated story
+    updateRequest = ActiveResource::Request.new(:post,
                                           path = '/Trial30/rest-1.v1/Data/Story/1013',
                                           body = "<Asset><Attribute name='Name' act='set'>Hello World</Attribute></Asset>",
                                           request_headers = post_headers_for('admin', 'admin'))
-    response = ActiveResource::Response.new(body = fixture_for('StoryTitleUpdate'),
+    updateResponse = ActiveResource::Response.new(body = fixture_for('StoryTitleUpdate'),
                                             status = 200,
                                             {})
+    ActiveResource::HttpMock.responses << [updateRequest, updateResponse]
+
+    # New Story
+    createRequest = ActiveResource::Request.new(:post,
+                                                  path = '/Trial30/rest-1.v1/Data/Story',
+                                                  body = "<Asset><Attribute name='Name' act='set'>Ticket #12</Attribute><Attribute name='Description' act='set'>Body</Attribute><Relation name='Scope' act='set'><Asset idref='Scope:1009' /></Relation></Asset>",
+                                                  request_headers = post_headers_for('admin', 'admin'))
+
+    createResponse = ActiveResource::Response.new(body = fixture_for('NewStory'),
+                                                  status = 200,
+                                                  {})
+    ActiveResource::HttpMock.responses << [createRequest, createResponse]
 
 
-    ActiveResource::HttpMock.responses << [request, response]
 
     @project_id = 1009
     @ticket_id = 1013
@@ -81,9 +93,9 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
   end
 
   it "should be able to create a ticket" do
-    pending("using posts in the api access")
     @ticket = @project.ticket!(:title => 'Ticket #12', :description => 'Body')
     @ticket.should be_an_instance_of(@klass)
+    @ticket.id.should == 1072
   end
 
   it "should be able to load all tickets based on attributes using updated_at field" do

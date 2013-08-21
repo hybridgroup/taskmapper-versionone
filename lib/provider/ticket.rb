@@ -11,8 +11,8 @@ module TaskMapper::Provider
 
       def self.create(*options)
         issue = API.new(*options)
+        issue.save!
         ticket = self.new issue
-        issue.save
         ticket
       end
 

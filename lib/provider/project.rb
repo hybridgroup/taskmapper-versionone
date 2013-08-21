@@ -26,7 +26,7 @@ module TaskMapper::Provider
       end  
 
       def ticket!(*options)
-        options[0].merge!(:id => id) if options.first.is_a?(Hash)
+        options[0].merge!(:project_id => id) if options.first.is_a?(Hash)
         provider_parent(self.class)::Ticket.create(*options)
       end
 
