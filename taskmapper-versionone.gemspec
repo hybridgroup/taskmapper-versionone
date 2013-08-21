@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "taskmapper-versionone"
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Rafael George"]
-  s.date = "2013-08-20"
+  s.date = "2013-08-21"
   s.description = "TaskMapper provider for accessing VersionOne."
   s.email = "george.rafael@gmail.com"
   s.extra_rdoc_files = [
@@ -33,10 +33,13 @@ Gem::Specification.new do |s|
     "lib/taskmapper-versionone.rb",
     "lib/versionone/nokogiri_to_hash.rb",
     "lib/versionone/versionone-api.rb",
+    "spec/fixtures/NewStory.xml",
     "spec/fixtures/Scope.xml",
     "spec/fixtures/Scope1009.xml",
+    "spec/fixtures/ScopeTitleUpdate.xml",
     "spec/fixtures/Stories.xml",
     "spec/fixtures/Story1013.xml",
+    "spec/fixtures/StoryTitleUpdate.xml",
     "spec/projects_spec.rb",
     "spec/spec_helper.rb",
     "spec/taskmapper-versionone_spec.rb",
