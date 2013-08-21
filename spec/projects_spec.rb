@@ -9,6 +9,17 @@ describe "TaskMapper::Versionone::Project" do
       mock.get '/Trial30/rest-1.v1/Data/Scope', headers, fixture_for('Scope'), 200
       mock.get '/Trial30/rest-1.v1/Data/Scope/1009', headers, fixture_for('Scope1009'), 200
     end
+
+    request = ActiveResource::Request.new(:post,
+                                          path = '/Trial30/rest-1.v1/Data/Scope/1009',
+                                          body = "<Asset><Attribute name='Name' act='set'>this is a change</Attribute></Asset>",
+                                          request_headers = post_headers_for('admin', 'admin'))
+    response = ActiveResource::Response.new(body = fixture_for('ScopeTitleUpdate'),
+                                            status = 200,
+                                            {})
+
+    ActiveResource::HttpMock.responses << [request, response]
+
   end
 
   before(:each) do
@@ -62,7 +73,6 @@ describe "TaskMapper::Versionone::Project" do
     end
 
     it "should be able to update and save a project" do
-      pending("using posts in the api access")
       @project = @taskmapper.project(@project_id)
       @project.name = 'this is a change'
       @project.save.should == true
