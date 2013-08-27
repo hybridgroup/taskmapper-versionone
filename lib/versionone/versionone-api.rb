@@ -124,19 +124,18 @@ module VersiononeAPI
       val = ''
       val += '<Asset>'
       attributes.each_pair do |key, value|
-
         if(key == 'project_id')
           val += "<Relation name='Scope' act='set'><Asset idref='Scope:#{value}' /></Relation>"
-        else
-          val += "<Attribute name='#{mappedField(key)}' act='set'>#{value}</Attribute>"
+        elsif !getUpdateableFieldName(key).nil?
+          val += "<Attribute name='#{getUpdateableFieldName(key)}' act='set'>#{value}</Attribute>"
         end
 
       end
       val += '</Asset>'
     end
 
-    def mappedField(key)
-      key
+    def getUpdateableFieldName(key)
+      nil
     end
 
     def self.instantiate_collection(collection, prefix_options = {})
@@ -219,14 +218,14 @@ module VersiononeAPI
         super(simplified, prefix_option)
       end
 
-      MAPPED_FIELDS = {
+      UPDATEABLE_FIELDS = {
           'name' => 'Name',
           'description' => 'Description',
-          'owner' => 'Owner.Name'
+          #'owner' => 'Owner.Name'
       }
 
-      def mappedField(key)
-        MAPPED_FIELDS[key] || key
+      def getUpdateableFieldName(key)
+        UPDATEABLE_FIELDS[key] || key
       end
 
       def tickets(options = {})
@@ -283,17 +282,17 @@ module VersiononeAPI
 
     end
 
-    MAPPED_FIELDS = {
+    UPDATEABLE_FIELDS = {
         'title' => 'Name',
         'description' => 'Description',
-        'requestor' => 'RequestedBy',
-        'priority' => 'Priority.Name',
-        'status' => 'Status.Name',
-        'assignee' => 'Owners.Name'
+        #'requestor' => 'RequestedBy',
+        #'priority' => 'Priority.Name',
+        #'status' => 'Status.Name',
+        #'assignee' => 'Owners.Name'
     }
 
-    def mappedField(key)
-      MAPPED_FIELDS[key] || key
+    def getUpdateableFieldName(key)
+      UPDATEABLE_FIELDS[key]
     end
 
   end
