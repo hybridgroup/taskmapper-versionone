@@ -3,6 +3,10 @@
 This is a provider for [taskmapper](http://ticketrb.com). It provides interoperability with [Version One](http://www.versionone.com/) and
 its issue tracking system through the taskmapper gem.
 
+## TODO
+
+- Return the url of the ticket, not just the href provided: this is just the rest end point.
+- Convert the Version One Status to taskmapper statuses 
 
 == Contributing to taskmapper-versioonne
  
