@@ -117,6 +117,11 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @ticket.requestor.should == 'joe.user@example.com'
   end
 
+  it "should return the status field" do
+    @ticket = @project.ticket(@ticket_id)
+    @ticket.status.should == :accepted
+  end
+
   it "should be able to update a ticket" do
     @ticket = @project.ticket(@ticket_id)
     @ticket.title = "Hello World"
