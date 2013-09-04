@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "taskmapper-versionone"
-  s.version = "0.2.2"
+  s.version = "0.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Rafael George"]
-  s.date = "2013-08-27"
+  s.date = "2013-09-04"
   s.description = "TaskMapper provider for accessing VersionOne."
   s.email = "george.rafael@gmail.com"
   s.extra_rdoc_files = [
