@@ -85,20 +85,47 @@ module VersiononeAPI
 
   end
 
+  class ActiveResource::Base
+    # store the attribute value in a thread local variable
+    class << self
+      %w(host user password).each do |attr|
+
+        define_method(attr) do
+          Thread.current["active_resource.#{attr}"]
+        end
+
+        define_method("#{attr}=") do |val|
+          Thread.current["active_resource.#{attr}"] = val
+        end
+      end
+    end
+  end
+
   class Error < StandardError; end
   class << self
 
+    %w(server).each do |attr|
+
+      define_method(attr) do
+        Thread.current["active_resource.#{attr}"]
+      end
+
+      define_method("#{attr}=") do |val|
+        Thread.current["active_resource.#{attr}"] = val
+      end
+    end
+
     #Sets up basic authentication credentials for all the resources.
     def authenticate(servname, username, password)
-      @server = servname
-      @server << '/' unless @server.end_with?('/')
-      @username = username
-      @password = password
+      self.server = servname
+      self.server << '/' unless self.server.end_with?('/')
+      #@username = username
+      #@password = password
       self::Base.user = username
       self::Base.password = password
 
       resources.each do |klass|
-        klass.site = klass.site_format % "#{@server}rest-1.v1/Data/"
+        klass.site = klass.site_format % "#{self.server}rest-1.v1/Data/"
       end
     end
 
@@ -110,6 +137,16 @@ module VersiononeAPI
   class Base < ActiveResource::Base
     self.format = NokogiriXmlFormat
 
+    %w(site).each do |attr|
+
+      define_method(attr) do
+        Thread.current["active_resource.base.#{attr}"]
+      end
+
+      define_method("#{attr}=") do |val|
+        Thread.current["active_resource.base.#{attr}"] = val
+      end
+    end
 
     def self.inherited(base)
       VersiononeAPI.resources << base
@@ -259,8 +296,10 @@ module VersiononeAPI
       object = record
       object = object.first if object.kind_of? Array
 
-      simplified = {:id => find_asset_id(object, 'Story'),
-                         :href => find_asset_href(object),
+      asset_id = find_asset_id(object, 'Story')
+      simplified = {:id => asset_id,
+                         :href => href_from_id(asset_id),
+                         :rest_uri => find_asset_href(object),
                          :title => find_text_attribute(object, 'Name'),
                          :description => find_text_attribute(object, 'Description'),
                          :requestor => find_text_attribute(object, 'RequestedBy'),
@@ -273,6 +312,10 @@ module VersiononeAPI
                          :updated_at => ''}
 
       super(simplified, prefix_option)
+    end
+
+    def self.href_from_id(id)
+     "#{VersiononeAPI.server}story.mvc/Summary?oidToken=Story%3A#{id}"
     end
 
     # Takes a response from a typical create post and pulls the ID out

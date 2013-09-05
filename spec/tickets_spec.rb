@@ -122,6 +122,12 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @ticket.status.should == :accepted
   end
 
+  it "should generate the story href" do
+    @ticket = @project.ticket(@ticket_id)
+
+    @ticket.href.should == 'http://server/Trial30/story.mvc/Summary?oidToken=Story%3A1013'
+  end
+
   it "should be able to update a ticket" do
     @ticket = @project.ticket(@ticket_id)
     @ticket.title = "Hello World"
