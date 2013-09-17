@@ -45,6 +45,10 @@ module TaskMapper::Provider
         self.status = value
       end
 
+      def url
+        href
+      end
+
     end
   end
 end
