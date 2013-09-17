@@ -19,7 +19,7 @@ Jeweler::Tasks.new do |gem|
   gem.summary = %Q{TaskMapper provider for accessing VersionOne}
   gem.description = %Q{TaskMapper provider for accessing VersionOne.}
   gem.email = "george.rafael@gmail.com"
-  gem.authors = ["Rafael George"]
+  gem.authors = ["Rafael George", 'Peter Schwarz']
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
