@@ -46,7 +46,9 @@ module TaskMapper::Provider
       end
 
       def url
-        href
+        return href if href
+
+        "#{VersiononeAPI.server}story.mvc/Summary?oidToken=Story%3A#{id}"
       end
 
     end

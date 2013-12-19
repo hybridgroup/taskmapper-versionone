@@ -59,6 +59,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @tickets.should be_an_instance_of(Array)
     @tickets.first.should be_an_instance_of(@klass)
     @tickets.first.id.should == @ticket_id
+    @tickets.first.url.should == "http://server/Trial30/story.mvc/Summary?oidToken=Story%3A#{@ticket_id}"
   end
 
   it "should return the ticket class" do
@@ -96,6 +97,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @ticket = @project.ticket!(:title => 'Ticket #12', :description => 'Body')
     @ticket.should be_an_instance_of(@klass)
     @ticket.id.should == 1072
+    @ticket.url.should == "http://server/Trial30/story.mvc/Summary?oidToken=Story%3A1072"
   end
 
   it "should be able to load all tickets based on attributes using updated_at field" do
@@ -105,7 +107,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     tickets.first.should be_an_instance_of(@klass)
   end
 
-  it "shoule be able to load all tickets based on attributes using created_at field" do
+  it "should be able to load all tickets based on attributes using created_at field" do
     @ticket = @project.ticket(@ticket_id)
     tickets = @project.tickets(:created_at => @ticket.created_at)
     tickets.should be_an_instance_of(Array)
