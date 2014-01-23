@@ -3,11 +3,6 @@
 This is a provider for [taskmapper](http://ticketrb.com). It provides interoperability with 
 [Version One](http://www.versionone.com/) and its issue tracking system through the taskmapper gem.
 
-## TODO
-
-- Version One, like many tracker systems, has customizable status.  Need a better way to 
-return status (either as objects, or as plain strings).
-
 ### Contributing to taskmapper-versioonne
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been 
