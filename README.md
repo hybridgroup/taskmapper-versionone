@@ -20,6 +20,12 @@ fixed yet
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or 
 is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
+## VersionOne Documents:
+* Where clause:  https://community.versionone.com/Developers/Developer-Library/Documentation/API/Queries/where
+* Select clause: https://community.versionone.com/Developers/Developer-Library/Documentation/API/Queries/select
+* Explore the V1 API:  https://community.versionone.com/Developers/Developer-Library/Documentation/API/Endpoints/meta.v1
+
+
 ### Copyright
 
 Copyright (c) 2011 Rafael George. See LICENSE.txt for
