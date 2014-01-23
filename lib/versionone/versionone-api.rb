@@ -326,11 +326,34 @@ module VersiononeAPI
                          :priority => find_text_attribute(object, 'Priority.Name'),
                          :status => find_text_attribute(object, 'Status.Name').try {|status| status.parameterize.underscore.to_sym},
                          :assignee => find_value_attribute(object, 'Owners.Name') ,
+                         :asset_state => find_text_attribute(object, 'AssetState').try { |state| parse_asset_state(state)  },
                          # Unsupported by Version One
                          :created_at => '',
                          :updated_at => ''}
 
       super(simplified, prefix_option)
+    end
+
+    # parse the asset state (which is returned as a number) into a symbol
+    # values can be found here:
+    # https://community.versionone.com/Developers/Developer-Library/Concepts/Asset_State
+    def self.parse_asset_state(state)
+      case state
+        when '0'
+          :future
+        when '64'
+          :active
+        when '128'
+          :closed
+        when '200'
+          :template
+        when '208'
+          :broken_down
+        when '255'
+          :deleted
+        else
+          :unknown
+      end
     end
 
     def self.href_from_id(id)

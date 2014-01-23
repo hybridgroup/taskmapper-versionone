@@ -10,6 +10,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
       mock.get '/Trial30/rest-1.v1/Data/Scope/1009', headers, fixture_for('Scope1009'), 200
       mock.get "/Trial30/rest-1.v1/Data/Story?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1009%27", headers, fixture_for('Stories'), 200
       mock.get "/Trial30/rest-1.v1/Data/Story/1013?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1009%27", headers, fixture_for('Story1013'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Story/1014?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1009%27", headers, fixture_for('Story1014'), 200
     end
 
     # Updated story
@@ -131,6 +132,19 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @ticket = @project.ticket(@ticket_id)
 
     @ticket.href.should == 'http://server/Trial30/story.mvc/Summary?oidToken=Story%3A1013'
+  end
+
+  describe 'parsing asset state' do
+    it 'should parse closed' do
+      @ticket = @project.ticket(@ticket_id)
+      @ticket.asset_state.should == :closed
+    end
+
+    it 'should parse active' do
+      @ticket = @project.ticket(1014)
+      @ticket.asset_state.should == :active
+    end
+
   end
 
   it "should be able to update a ticket" do

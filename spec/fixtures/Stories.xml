@@ -80,7 +80,7 @@
     <Relation name="Super"/>
     <Attribute name="Description"/>
     <Attribute name="Name">Set up Selenium</Attribute>
-    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="AssetState">64</Attribute>
     <Attribute name="DetailEstimate"/>
     <Attribute name="Reference"/>
     <Attribute name="ToDo"/>
