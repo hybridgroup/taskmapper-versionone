@@ -148,11 +148,35 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
   end
 
   describe 'status' do
-    it 'should base the status from the asset state' do
-       @klass.new(:asset_state => :future).status.should == :unstarted
-       @klass.new(:asset_state => :active).status.should == :started
-       @klass.new(:asset_state => :closed).status.should == :completed
-       @klass.new().status.should == :unstarted
+    it 'should be :completed if the asset_state is :closed' do
+      @klass.new(:asset_state => :closed).status.should == :completed
+      @klass.new(:asset_state => :closed, :status_name => :future).status.should == :completed
+    end
+
+    it 'should be :started if asset_state is not :closed or :deleted and it has a status' do
+      @klass.new(asset_state: :active, status_name: :future).status.should == :started
+      @klass.new(asset_state: :active, status_name: :in_progress).status.should == :started
+      @klass.new(asset_state: :active, status_name: :done).status.should == :started
+      @klass.new(asset_state: :active, status_name: :accepted).status.should == :started
+
+      # the future class here is a thought exercise, as I can't see a way
+      # to set the asset state to future in the slightest.
+      @klass.new(asset_state: :future, status_name: :future).status.should == :started
+      @klass.new(asset_state: :future, status_name: :in_progress).status.should == :started
+      @klass.new(asset_state: :future, status_name: :done).status.should == :started
+      @klass.new(asset_state: :future, status_name: :accepted).status.should == :started
+    end
+
+    it 'should be :unstarted if not :closed or :deleted and no status' do
+      @klass.new(asset_state: :future).status.should == :unstarted
+      @klass.new(asset_state: :active).status.should == :unstarted
+    end
+
+    it 'should be :unstarted if :deleted' do
+      @klass.new(asset_state: :deleted, status_name: :future).status.should == :unstarted
+      @klass.new(asset_state: :deleted, status_name: :in_progress).status.should == :unstarted
+      @klass.new(asset_state: :deleted, status_name: :done).status.should == :unstarted
+      @klass.new(asset_state: :deleted, status_name: :accepted).status.should == :unstarted
     end
   end
 

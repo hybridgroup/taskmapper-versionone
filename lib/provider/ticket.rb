@@ -52,14 +52,11 @@ module TaskMapper::Provider
       end
 
       def status
-        case self.asset_state
-          when :active
-            :started
-          when :closed
-            :completed
-          else
-            :unstarted
-        end
+        return :completed if self.asset_state == :closed
+        return :unstarted if self.asset_state == :deleted
+        return :started unless self.status_name.nil?
+
+        :unstarted
       end
 
     end
