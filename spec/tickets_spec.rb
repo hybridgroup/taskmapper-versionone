@@ -170,6 +170,8 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     it 'should be :unstarted if not :closed or :deleted and no status' do
       @klass.new(asset_state: :future).status.should == :unstarted
       @klass.new(asset_state: :active).status.should == :unstarted
+      @klass.new(asset_state: :future, status_name: '').status.should == :unstarted
+      @klass.new(asset_state: :active, status_name: '').status.should == :unstarted
     end
 
     it 'should be :unstarted if :deleted' do

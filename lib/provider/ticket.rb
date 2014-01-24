@@ -54,7 +54,7 @@ module TaskMapper::Provider
       def status
         return :completed if self.asset_state == :closed
         return :unstarted if self.asset_state == :deleted
-        return :started unless self.status_name.nil?
+        return :started if (!self.status_name.nil? && !self.status_name.empty?)
 
         :unstarted
       end
