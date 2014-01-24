@@ -324,7 +324,7 @@ module VersiononeAPI
                          :requestor => find_text_attribute(object, 'RequestedBy'),
                          :project_id => strip_asset_type(find_relation_id(object, 'Scope'), 'Scope'),
                          :priority => find_text_attribute(object, 'Priority.Name'),
-                         :status => find_text_attribute(object, 'Status.Name').try {|status| status.parameterize.underscore.to_sym},
+                         :status_name => find_text_attribute(object, 'Status.Name').try {|status| status.parameterize.underscore.to_sym},
                          :assignee => find_value_attribute(object, 'Owners.Name') ,
                          :asset_state => find_text_attribute(object, 'AssetState').try { |state| parse_asset_state(state)  },
                          # Unsupported by Version One

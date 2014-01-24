@@ -38,7 +38,7 @@ module TaskMapper::Provider
       end
 
       def resolution
-        self.status
+        self.status_name
       end
 
       def resolution=(value)
@@ -49,6 +49,17 @@ module TaskMapper::Provider
         return href if href
 
         "#{VersiononeAPI.server}story.mvc/Summary?oidToken=Story%3A#{id}"
+      end
+
+      def status
+        case self.asset_state
+          when :active
+            :started
+          when :closed
+            :completed
+          else
+            :unstarted
+        end
       end
 
     end

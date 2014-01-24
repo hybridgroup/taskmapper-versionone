@@ -125,7 +125,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
 
   it "should return the status field" do
     @ticket = @project.ticket(@ticket_id)
-    @ticket.status.should == :accepted
+    @ticket.status_name.should == :accepted
   end
 
   it "should generate the story href" do
@@ -147,6 +147,15 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
 
   end
 
+  describe 'status' do
+    it 'should base the status from the asset state' do
+       @klass.new(:asset_state => :future).status.should == :unstarted
+       @klass.new(:asset_state => :active).status.should == :started
+       @klass.new(:asset_state => :closed).status.should == :completed
+       @klass.new().status.should == :unstarted
+    end
+  end
+
   it "should be able to update a ticket" do
     @ticket = @project.ticket(@ticket_id)
     @ticket.title = "Hello World"
@@ -157,7 +166,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @ticket = @project.ticket(@ticket_id)
     @ticket.title.should_not be_nil
     @ticket.description.should_not be_nil
-    @ticket.status.should_not be_nil
+    @ticket.status_name.should_not be_nil
     @ticket.priority.should_not be_nil
     @ticket.resolution.should_not be_nil
     @ticket.created_at.should_not be_nil
