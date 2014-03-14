@@ -3,11 +3,6 @@
 This is a provider for [taskmapper](http://ticketrb.com). It provides interoperability with 
 [Version One](http://www.versionone.com/) and its issue tracking system through the taskmapper gem.
 
-## TODO
-
-- Version One, like many tracker systems, has customizable status.  Need a better way to 
-return status (either as objects, or as plain strings).
-
 ### Contributing to taskmapper-versioonne
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been 
@@ -19,6 +14,12 @@ fixed yet
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or 
 is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+## VersionOne Documents:
+* Where clause:  https://community.versionone.com/Developers/Developer-Library/Documentation/API/Queries/where
+* Select clause: https://community.versionone.com/Developers/Developer-Library/Documentation/API/Queries/select
+* Explore the V1 API:  https://community.versionone.com/Developers/Developer-Library/Documentation/API/Endpoints/meta.v1
+
 
 ### Copyright
 

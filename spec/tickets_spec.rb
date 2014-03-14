@@ -3,10 +3,14 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 describe "TaskMapper::Provider::Versionone::Ticket" do
   before(:all) do
     headers = headers_for('admin', 'admin')
+
+    SELECTION_QUERY = 'sel=Name%2CDescription%2CRequestedBy%2CScope%2CPriority.Name%2CStatus.Name%2COwners.Name%2CAssetState'
+
     ActiveResource::HttpMock.respond_to do |mock|
       mock.get '/Trial30/rest-1.v1/Data/Scope/1009', headers, fixture_for('Scope1009'), 200
-      mock.get '/Trial30/rest-1.v1/Data/Story?where=Scope%3D%27Scope%3A1009%27', headers, fixture_for('Stories'), 200
-      mock.get '/Trial30/rest-1.v1/Data/Story/1013?where=Scope%3D%27Scope%3A1009%27', headers, fixture_for('Story1013'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Story?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1009%27", headers, fixture_for('Stories'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Story/1013?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1009%27", headers, fixture_for('Story1013'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Story/1014?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1009%27", headers, fixture_for('Story1014'), 200
     end
 
     # Updated story
@@ -121,13 +125,61 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
 
   it "should return the status field" do
     @ticket = @project.ticket(@ticket_id)
-    @ticket.status.should == :accepted
+    @ticket.status_name.should == :accepted
   end
 
   it "should generate the story href" do
     @ticket = @project.ticket(@ticket_id)
 
     @ticket.href.should == 'http://server/Trial30/story.mvc/Summary?oidToken=Story%3A1013'
+  end
+
+  describe 'parsing asset state' do
+    it 'should parse closed' do
+      @ticket = @project.ticket(@ticket_id)
+      @ticket.asset_state.should == :closed
+    end
+
+    it 'should parse active' do
+      @ticket = @project.ticket(1014)
+      @ticket.asset_state.should == :active
+    end
+
+  end
+
+  describe 'status' do
+    it 'should be :completed if the asset_state is :closed' do
+      @klass.new(:asset_state => :closed).status.should == :completed
+      @klass.new(:asset_state => :closed, :status_name => :future).status.should == :completed
+    end
+
+    it 'should be :started if asset_state is not :closed or :deleted and it has a status' do
+      @klass.new(asset_state: :active, status_name: :future).status.should == :started
+      @klass.new(asset_state: :active, status_name: :in_progress).status.should == :started
+      @klass.new(asset_state: :active, status_name: :done).status.should == :started
+      @klass.new(asset_state: :active, status_name: :accepted).status.should == :started
+
+      # the future class here is a thought exercise, as I can't see a way
+      # to set the asset state to future in the slightest.
+      @klass.new(asset_state: :future, status_name: :future).status.should == :started
+      @klass.new(asset_state: :future, status_name: :in_progress).status.should == :started
+      @klass.new(asset_state: :future, status_name: :done).status.should == :started
+      @klass.new(asset_state: :future, status_name: :accepted).status.should == :started
+    end
+
+    it 'should be :unstarted if not :closed or :deleted and no status' do
+      @klass.new(asset_state: :future).status.should == :unstarted
+      @klass.new(asset_state: :active).status.should == :unstarted
+      @klass.new(asset_state: :future, status_name: '').status.should == :unstarted
+      @klass.new(asset_state: :active, status_name: '').status.should == :unstarted
+    end
+
+    it 'should be :unstarted if :deleted' do
+      @klass.new(asset_state: :deleted, status_name: :future).status.should == :unstarted
+      @klass.new(asset_state: :deleted, status_name: :in_progress).status.should == :unstarted
+      @klass.new(asset_state: :deleted, status_name: :done).status.should == :unstarted
+      @klass.new(asset_state: :deleted, status_name: :accepted).status.should == :unstarted
+    end
   end
 
   it "should be able to update a ticket" do
@@ -140,7 +192,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @ticket = @project.ticket(@ticket_id)
     @ticket.title.should_not be_nil
     @ticket.description.should_not be_nil
-    @ticket.status.should_not be_nil
+    @ticket.status_name.should_not be_nil
     @ticket.priority.should_not be_nil
     @ticket.resolution.should_not be_nil
     @ticket.created_at.should_not be_nil

@@ -206,7 +206,26 @@ module VersiononeAPI
       end
     end
 
- end
+    # this provides the default search criteria for a good number
+    # of our queries.
+    #
+    # :where => "Scope='Scope:#{id}'"
+    #     filters the query to only get the stories
+    #     that are relevant to this particular project
+    #     https://community.versionone.com/Developers/Developer-Library/Documentation/API/Queries/where
+    # :sel => VersiononeAPI::Issue::ISSUE_SELECTION_FIELDS
+    #     selects only the fields that we care about
+    #     https://community.versionone.com/Developers/Developer-Library/Documentation/API/Queries/select
+    def self.query_params_for_scope(id)
+      {
+          :params => {
+              :where => "Scope='Scope:#{id}'",
+              :sel => VersiononeAPI::Issue::ISSUE_SELECTION_FIELDS
+          }
+      }
+    end
+
+  end
 
    # Find projects
   #
@@ -287,7 +306,7 @@ module VersiononeAPI
   class Issue < Base
     extend HasAssets
 
-      def self.collection_path(prefix_options = {}, query_options = nil)
+    def self.collection_path(prefix_options = {}, query_options = nil)
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
         "#{prefix(prefix_options)}Story#{query_string(query_options)}"
       end
@@ -313,13 +332,36 @@ module VersiononeAPI
                          :requestor => find_text_attribute(object, 'RequestedBy'),
                          :project_id => strip_asset_type(find_relation_id(object, 'Scope'), 'Scope'),
                          :priority => find_text_attribute(object, 'Priority.Name'),
-                         :status => find_text_attribute(object, 'Status.Name').try {|status| status.parameterize.underscore.to_sym},
+                         :status_name => find_text_attribute(object, 'Status.Name').try {|status| status.parameterize.underscore.to_sym},
                          :assignee => find_value_attribute(object, 'Owners.Name') ,
+                         :asset_state => find_text_attribute(object, 'AssetState').try { |state| parse_asset_state(state)  },
                          # Unsupported by Version One
                          :created_at => '',
                          :updated_at => ''}
 
       super(simplified, prefix_option)
+    end
+
+    # parse the asset state (which is returned as a number) into a symbol
+    # values can be found here:
+    # https://community.versionone.com/Developers/Developer-Library/Concepts/Asset_State
+    def self.parse_asset_state(state)
+      case state
+        when '0'
+          :future
+        when '64'
+          :active
+        when '128'
+          :closed
+        when '200'
+          :template
+        when '208'
+          :broken_down
+        when '255'
+          :deleted
+        else
+          :unknown
+      end
     end
 
     def self.href_from_id(id)
@@ -332,6 +374,8 @@ module VersiononeAPI
       self.class.find_asset_id(decoded, 'Story')
 
     end
+
+    ISSUE_SELECTION_FIELDS = "Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Owners.Name,AssetState"
 
     UPDATEABLE_FIELDS = {
         'title' => 'Name',

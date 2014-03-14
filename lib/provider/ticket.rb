@@ -21,7 +21,7 @@ module TaskMapper::Provider
       # Must be defined by the provider
       def self.find_by_id(project_id, ticket_id)
         if self::API.is_a? Class
-          self.new self::API.find(ticket_id, :params => {:where => "Scope='Scope:#{project_id}'" })
+          self.new self::API.find(ticket_id, self::API.query_params_for_scope(project_id))
         else
           raise TaskMapper::Exception.new("#{self.name}::#{this_method} method must be implemented by the provider")
         end
@@ -30,7 +30,7 @@ module TaskMapper::Provider
       # This is a helper method to find
       def self.search(project_id, options = {}, limit = 1000)
         if self::API.is_a? Class
-          tickets = self::API.find(:all, :params => {:where => "Scope='Scope:#{project_id}'" }).collect { |ticket| self.new ticket }
+          tickets = self::API.find(:all, self::API.query_params_for_scope(project_id)).collect { |ticket| self.new ticket }
           search_by_attribute(tickets, options, limit)
         else
           raise TaskMapper::Exception.new("#{self.name}::#{this_method} method must be implemented by the provider")
@@ -38,7 +38,7 @@ module TaskMapper::Provider
       end
 
       def resolution
-        self.status
+        self.status_name
       end
 
       def resolution=(value)
@@ -49,6 +49,14 @@ module TaskMapper::Provider
         return href if href
 
         "#{VersiononeAPI.server}story.mvc/Summary?oidToken=Story%3A#{id}"
+      end
+
+      def status
+        return :completed if self.asset_state == :closed
+        return :unstarted if self.asset_state == :deleted
+        return :started if (!self.status_name.nil? && !self.status_name.empty?)
+
+        :unstarted
       end
 
     end

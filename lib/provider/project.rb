@@ -19,7 +19,7 @@ module TaskMapper::Provider
             #options[0].merge!(:params => {:id => id})
             super(*options)
           elsif options.empty?
-            tickets = VersiononeAPI::Issue.find(:all, :params => {:where => "Scope='Scope:#{id}'" }).collect { |ticket| TaskMapper::Provider::Versionone::Ticket.new ticket }
+            VersiononeAPI::Issue.find(:all, API.query_params_for_scope(id)).collect { |ticket| TaskMapper::Provider::Versionone::Ticket.new ticket }
           else
             super(*options)
           end
