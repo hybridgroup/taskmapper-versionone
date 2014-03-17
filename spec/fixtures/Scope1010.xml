@@ -7,7 +7,7 @@
   <Attribute name="ChangeDateUTC">2013-09-10T15:13:30.393</Attribute>
   <Relation name="Children">
     <Asset href="/Trial30/rest-1.v1/Data/Scope/1132" idref="Scope:1132" />
-    <Asset href="/Trial30/rest-1.v1/Data/Scope/1152" idref="Scope:1152" />
+    <Asset href="/Trial30/rest-1.v1/Data/Scope/1164" idref="Scope:1164" />
     <Asset href="/Trial30/rest-1.v1/Data/Scope/1610" idref="Scope:1610" />
   </Relation>
   <Attribute name="Children.Name">

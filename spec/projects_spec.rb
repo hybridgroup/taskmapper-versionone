@@ -55,7 +55,7 @@ describe "TaskMapper::Versionone::Project" do
     it 'should be able to read the project children as well' do
       project = @taskmapper.project(1010)
       project.id.should == 1010
-      project.child_project_ids.should == %w(1132 1152 1610)
+      project.child_project_ids.should == %w(1132 1164 1610)
     end
 
     it "should be able to find a project" do

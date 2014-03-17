@@ -9,7 +9,15 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
 
     ActiveResource::HttpMock.respond_to do |mock|
       mock.get "/Trial30/rest-1.v1/Data/Scope/1009?#{SCOPE_SELECTION_QUERY}", headers, fixture_for('Scope1009'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Scope/1010?#{SCOPE_SELECTION_QUERY}", headers, fixture_for('Scope1010'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Scope/1132?#{SCOPE_SELECTION_QUERY}", headers, fixture_for('Scope1132'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Scope/1164?#{SCOPE_SELECTION_QUERY}", headers, fixture_for('Scope1164'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Scope/1610?#{SCOPE_SELECTION_QUERY}", headers, fixture_for('Scope1610'), 200
       mock.get "/Trial30/rest-1.v1/Data/Story?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1009%27", headers, fixture_for('Stories'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Story?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1010%27", headers, fixture_for('Stories1010'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Story?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1132%27", headers, fixture_for('Stories1132'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Story?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1164%27", headers, fixture_for('Stories1164'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Story?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1610%27", headers, fixture_for('Stories1610'), 200
       mock.get "/Trial30/rest-1.v1/Data/Story/1013?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1009%27", headers, fixture_for('Story1013'), 200
       mock.get "/Trial30/rest-1.v1/Data/Story/1014?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1009%27", headers, fixture_for('Story1014'), 200
     end
@@ -133,6 +141,18 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @ticket = @project.ticket(@ticket_id)
 
     @ticket.href.should == 'http://server/Trial30/story.mvc/Summary?oidToken=Story%3A1013'
+  end
+
+  describe 'projects with sub-projects' do
+    before do
+      @project = @taskmapper.project(1010)
+    end
+
+    it 'should get all the tickets in every child as well.' do
+      tickets = @project.tickets()
+
+      tickets.length.should == 3
+    end
   end
 
   describe 'parsing asset state' do

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Asset href="/Trial30/rest-1.v1/Data/Scope/1164" id="Scope:1164">
+  <Attribute name="Name">Linked to Cardboard</Attribute>
+  <Attribute name="Description" />
+  <Attribute name="Owner.Name">Guy de Someplace</Attribute>
+  <Attribute name="CreateDateUTC">2013-06-10T18:54:40.983</Attribute>
+  <Attribute name="ChangeDateUTC">2013-06-11T13:57:21.373</Attribute>
+  <Relation name="Children" />
+  <Attribute name="Children.Name" />
+</Asset>

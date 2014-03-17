@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Assets total="1" pageSize="2147483647" pageStart="0">
+  <Asset href="/Trial30/rest-1.v1/Data/Story/1016" id="Story:1016">
+    <Attribute name="Name">Set up Release</Attribute>
+    <Attribute name="Description"/>
+    <Attribute name="RequestedBy"/>
+    <Relation name="Scope">
+      <Asset href="/Trial30/rest-1.v1/Data/Scope/1164" idref="Scope:1164"/>
+    </Relation>
+    <Attribute name="Priority.Name"/>
+    <Attribute name="Status.Name">Accepted</Attribute>
+    <Attribute name="AssetState">128</Attribute>
+    <Attribute name="CreateDateUTC">2013-06-11T13:41:28.377</Attribute>
+    <Attribute name="ChangeDateUTC">2013-06-11T14:09:40.007</Attribute>
+    <Attribute name="Estimate">1</Attribute>
+    <Attribute name="Scope.Name">Linked to Cardboard</Attribute>
+    <Attribute name="Owners.Name">
+      <Value>Guy de Someplace</Value>
+    </Attribute>
+  </Asset>
+</Assets>

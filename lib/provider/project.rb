@@ -15,15 +15,24 @@ module TaskMapper::Provider
       end
 
       def tickets(*options)
-          if options.first.is_a? Hash
-            #options[0].merge!(:params => {:id => id})
-            super(*options)
-          elsif options.empty?
-            VersiononeAPI::Issue.find(:all, API.query_params_for_scope(id)).collect { |ticket| TaskMapper::Provider::Versionone::Ticket.new ticket }
-          else
-            super(*options)
+        if options.first.is_a? Hash
+          #options[0].merge!(:params => {:id => id})
+          super(*options)
+        elsif options.empty?
+          tix = Project.issues_in_scope(id)
+          unless self.child_project_ids.nil?
+            child_project_ids.each { |id|
+              child_issues = Project.issues_in_scope(id)
+              tix = tix.concat(child_issues) unless child_issues.nil?
+            }
           end
-      end  
+          tix
+        else
+          super(*options)
+        end
+
+
+      end
 
       def ticket!(*options)
         options[0].merge!(:project_id => id) if options.first.is_a?(Hash)
@@ -38,6 +47,12 @@ module TaskMapper::Provider
             sleep 1
           end
         end
+      end
+
+      private
+
+      def self.issues_in_scope(id)
+        VersiononeAPI::Issue.find(:all, API.query_params_for_scope(id)).collect { |ticket| TaskMapper::Provider::Versionone::Ticket.new ticket }
       end
 
     end
