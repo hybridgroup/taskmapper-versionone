@@ -9,6 +9,7 @@ describe "TaskMapper::Versionone::Project" do
     ActiveResource::HttpMock.respond_to do |mock|
       mock.get "/Trial30/rest-1.v1/Data/Scope?#{SELECTION_QUERY}", headers, fixture_for('Scope'), 200
       mock.get "/Trial30/rest-1.v1/Data/Scope/1009?#{SELECTION_QUERY}", headers, fixture_for('Scope1009'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Scope/1010?#{SELECTION_QUERY}", headers, fixture_for('Scope1010'), 200
     end
 
     request = ActiveResource::Request.new(:post,
@@ -49,6 +50,12 @@ describe "TaskMapper::Versionone::Project" do
       projects.should be_an_instance_of(Array)
       projects.first.should be_an_instance_of(@klass)
       projects.first.id.should == @project_id
+    end
+
+    it 'should be able to read the project children as well' do
+      project = @taskmapper.project(1010)
+      project.id.should == 1010
+      project.child_project_ids.should == %w(1132 1152 1610)
     end
 
     it "should be able to find a project" do

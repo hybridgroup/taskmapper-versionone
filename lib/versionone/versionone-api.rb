@@ -62,11 +62,17 @@ module VersiononeAPI
       !children.empty? ? children.first[:Value][:children].first[:content] : ''
     end
 
-    def find_relation_id(asset_container, name)
-      relation = find_child_with_name(asset_container, :Relation, name)
-      if(!relation.empty?)
-        relation.first[:Asset][:idref].first
+    def find_relation_ids(asset_container, attribute_name, id_type)
+      relation = find_child_with_name(asset_container, :Relation, attribute_name)
+      if relation and not relation.empty?
+        relation.collect {|child|
+          strip_asset_type(child[:Asset][:idref].first, id_type)}
       end
+    end
+
+    def find_relation_id(asset_container, name, id_type)
+     ids = find_relation_ids(asset_container, name, id_type)
+     ids.first unless ids.nil? or ids.empty?
 
     end
 
@@ -79,7 +85,7 @@ module VersiononeAPI
     end
 
     def strip_asset_type(id, asset_type)
-      id.gsub!("#{asset_type}:", '')
+      id.gsub!("#{asset_type}:", '') unless id.nil?
     end
 
     def asset(asset_container)
@@ -292,7 +298,8 @@ module VersiononeAPI
          :created_at => find_text_attribute(object, 'CreateDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
          :updated_at => find_text_attribute(object, 'ChangeDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
          :name => find_text_attribute(object, 'Name'),
-         :owner => find_text_attribute(object, 'Owner.Name')}
+         :owner => find_text_attribute(object, 'Owner.Name'),
+         :child_project_ids => find_relation_ids(object, 'Children', 'Scope')}
 
         super(simplified, prefix_option)
       end
@@ -351,7 +358,7 @@ module VersiononeAPI
                          :title => find_text_attribute(object, 'Name'),
                          :description => find_text_attribute(object, 'Description'),
                          :requestor => find_text_attribute(object, 'RequestedBy'),
-                         :project_id => strip_asset_type(find_relation_id(object, 'Scope'), 'Scope'),
+                         :project_id => find_relation_id(object, 'Scope', 'Scope'),
                          :priority => find_text_attribute(object, 'Priority.Name'),
                          :status_name => find_text_attribute(object, 'Status.Name').try {|status| status.parameterize.underscore.to_sym},
                          :assignee => find_value_attribute(object, 'Owners.Name') ,
