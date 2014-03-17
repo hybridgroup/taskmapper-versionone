@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1009" id="Scope:1009">
+<Asset href="/Trial30/rest-1.v1/Data/Scope/1009" id="Scope:1009">
   <Attribute name="Name">MyProjectName</Attribute>
   <Attribute name="Description" />
   <Attribute name="Owner.Name">Peter Schwarz</Attribute>
