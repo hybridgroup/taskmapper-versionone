@@ -2,12 +2,13 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe "TaskMapper::Versionone::Project" do
 
+  SELECTION_QUERY = 'sel=Name%2CDescription%2COwners.Name%2CCreateDateUTC%2CChangeDateUTC%2CChildren'
   before(:all) do
     headers = headers_for('admin', 'admin')
     @project_id = 1009
     ActiveResource::HttpMock.respond_to do |mock|
-      mock.get '/Trial30/rest-1.v1/Data/Scope', headers, fixture_for('Scope'), 200
-      mock.get '/Trial30/rest-1.v1/Data/Scope/1009', headers, fixture_for('Scope1009'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Scope?#{SELECTION_QUERY}", headers, fixture_for('Scope'), 200
+      mock.get "/Trial30/rest-1.v1/Data/Scope/1009?#{SELECTION_QUERY}", headers, fixture_for('Scope1009'), 200
     end
 
     request = ActiveResource::Request.new(:post,

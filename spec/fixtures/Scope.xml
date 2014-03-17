@@ -1,39 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Assets total="1" pageSize="2147483647" pageStart="0">
-  <Asset href="/Trail30/rest-1.v1/Data/Scope/1009" id="Scope:1009">
-    <Attribute name="AssetType">Scope</Attribute>
-    <Relation name="Schedule">
-      <Asset href="/Trail30/rest-1.v1/Data/Schedule/1000" idref="Schedule:1000"/>
+<Assets total="10" pageSize="2147483647" pageStart="0">
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1121" id="Scope:1009">
+    <Attribute name="Name">CardBoard Test</Attribute>
+    <Attribute name="Description" />
+    <Attribute name="Owner.Name">Peter Schwarz</Attribute>
+    <Attribute name="CreateDateUTC">2013-08-20T18:27:40.180</Attribute>
+    <Attribute name="ChangeDateUTC">2013-09-10T15:13:30.393</Attribute>
+    <Relation name="Children">
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1132" idref="Scope:1132" />
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1152" idref="Scope:1152" />
+      <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1610" idref="Scope:1610" />
     </Relation>
-    <Relation name="Parent"/>
-    <Relation name="Owner">
-      <Asset href="/Trail30/rest-1.v1/Data/Member/20" idref="Member:20"/>
-    </Relation>
-    <Attribute name="Description"/>
-    <Attribute name="Name">MyProjectName</Attribute>
-    <Attribute name="AssetState">64</Attribute>
-    <Attribute name="EndDate"/>
-    <Attribute name="BeginDate">2013-06-10</Attribute>
-    <Relation name="Status"/>
-    <Relation name="TestSuite"/>
-    <Relation name="SecurityScope">
-      <Asset href="/Trail30/rest-1.v1/Data/Scope/1009" idref="Scope:1009"/>
-    </Relation>
-    <Relation name="Scheme">
-      <Asset href="/Trail30/rest-1.v1/Data/Scheme/1001" idref="Scheme:1001"/>
-    </Relation>
-    <Attribute name="Reference"/>
-    <Attribute name="Schedule.Name">MyProjectName</Attribute>
-    <Attribute name="Parent.Name"/>
-    <Attribute name="Owner.Name">MyProjectOwner</Attribute>
-    <Attribute name="Owner.Nickname">Admin</Attribute>
-    <Attribute name="Status.Name"/>
-    <Attribute name="TestSuite.Name"/>
-    <Attribute name="SecurityScope.Name">MyProjectName</Attribute>
-    <Attribute name="Scheme.Name">Default Scheme</Attribute>
-    <Relation name="BuildProjects"/>
-    <Attribute name="BuildProjects.Name"/>
-    <Attribute name="Ideas"/>
+    <Attribute name="Children.Name">
+      <Value>CardBoard ChildProject</Value>
+      <Value>Linked to Cardboard</Value>
+      <Value>Flight Done Right</Value>
+    </Attribute>
   </Asset>
-
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1132" id="Scope:1132">
+    <Attribute name="Name">CardBoard ChildProject</Attribute>
+    <Attribute name="Description">&lt;p&gt;This is a child project, to test TaskMapper's capabilities.&lt;/p&gt;</Attribute>
+    <Attribute name="Owner.Name">Peter Schwarz</Attribute>
+    <Attribute name="CreateDateUTC">2013-08-26T21:26:44.843</Attribute>
+    <Attribute name="ChangeDateUTC">2013-08-26T21:26:44.843</Attribute>
+    <Relation name="Children" />
+    <Attribute name="Children.Name" />
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1152" id="Scope:1152">
+    <Attribute name="Name">Linked to Cardboard</Attribute>
+    <Attribute name="Description" />
+    <Attribute name="Owner.Name">Peter Schwarz</Attribute>
+    <Attribute name="CreateDateUTC">2013-09-10T15:06:32.700</Attribute>
+    <Attribute name="ChangeDateUTC">2013-09-10T15:06:32.700</Attribute>
+    <Relation name="Children" />
+    <Attribute name="Children.Name" />
+  </Asset>
+  <Asset href="/partner_DevJam/rest-1.v1/Data/Scope/1610" id="Scope:1610">
+    <Attribute name="Name">Flight Done Right</Attribute>
+    <Attribute name="Description">&lt;p&gt;Dave's Flight Done Right example.&lt;/p&gt;</Attribute>
+    <Attribute name="Owner.Name">Marc Chapman</Attribute>
+    <Attribute name="CreateDateUTC">2013-12-16T18:41:47.210</Attribute>
+    <Attribute name="ChangeDateUTC">2013-12-19T05:37:39.063</Attribute>
+    <Relation name="Children" />
+    <Attribute name="Children.Name" />
+  </Asset>
 </Assets>
+

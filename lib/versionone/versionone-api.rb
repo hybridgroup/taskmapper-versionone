@@ -3,6 +3,8 @@ require 'nokogiri'
 require File.expand_path(File.dirname(__FILE__) + '/nokogiri_to_hash')
 require 'active_support'
 require 'active_resource'
+require 'active_support/core_ext/object/to_query'
+
 
 
 # Ruby lib for working with the VersionOne API's XML interface.
@@ -190,9 +192,13 @@ module VersiononeAPI
     end
 
     def update
-      connection.post(element_path(prefix_options), encode, self.class.headers).tap do |response|
+      connection.post(update_path, encode, self.class.headers).tap do |response|
         load_attributes_from_response(response)
       end
+    end
+
+    def update_path
+      element_path(prefix_options)
     end
 
     def load_attributes_from_response(response)
@@ -257,14 +263,22 @@ module VersiononeAPI
 
       def self.collection_path(prefix_options = {}, query_options = nil)
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
+        query_options = SCOPE_SELECTION_QUERY_OPTIONS.merge(query_options)
         "#{prefix(prefix_options)}Scope#{query_string(query_options)}"
       end
 
       def self.element_path(id, prefix_options = {}, query_options = nil)
+        self.extended_element_path(id, false, prefix_options, query_options)
+      end
+
+      def self.extended_element_path(id, is_post, prefix_options = {}, query_options = nil)
         #id format is "resource_name:id", but element_path just needs the id, without the resource_name.
         scope_id = id.to_s
         scope_id.gsub!("Scope:", "")
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
+        unless is_post
+          query_options = SCOPE_SELECTION_QUERY_OPTIONS.merge(query_options)
+        end
         "#{prefix(prefix_options)}Scope/#{URI.escape scope_id}#{query_string(query_options)}"
       end
 
@@ -275,19 +289,25 @@ module VersiononeAPI
 
         simplified = {:id => find_asset_id(object, 'Scope'),
          :description => find_text_attribute(object, 'Description'),
-         :created_at => '',
-         :updated_at => '',
+         :created_at => find_text_attribute(object, 'CreateDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
+         :updated_at => find_text_attribute(object, 'ChangeDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
          :name => find_text_attribute(object, 'Name'),
          :owner => find_text_attribute(object, 'Owner.Name')}
 
         super(simplified, prefix_option)
       end
 
+      SCOPE_SELECTION_QUERY_OPTIONS = {:sel => 'Name,Description,Owners.Name,CreateDateUTC,ChangeDateUTC,Children' }
+
       UPDATEABLE_FIELDS = {
           'name' => 'Name',
           'description' => 'Description',
           #'owner' => 'Owner.Name'
       }
+
+      def update_path
+        self.class.extended_element_path(to_param, true, prefix_options)
+      end
 
       def getUpdateableFieldName(key)
         UPDATEABLE_FIELDS[key] || key
