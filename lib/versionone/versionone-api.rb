@@ -36,13 +36,14 @@ module VersiononeAPI
   module HasAssets
 
     def find_child_with_name(asset_container, child_type, name)
-      asset(asset_container)[:children].find_all { |child|
-        !child[child_type].nil?
+      element = asset(asset_container)[:children].find_all { |child|
+        child && !child[child_type].nil?
       }.collect { |child|
-        child[child_type]
-      }.find {|attr|
+        child && child[child_type]
+      }.find { |attr|
         attr[:name].first == name
-      }[:children]
+      }
+      element ? element[:children] : []
     end
 
     def find_attribute(asset_container, attribute_name)
@@ -335,9 +336,8 @@ module VersiononeAPI
                          :status_name => find_text_attribute(object, 'Status.Name').try {|status| status.parameterize.underscore.to_sym},
                          :assignee => find_value_attribute(object, 'Owners.Name') ,
                          :asset_state => find_text_attribute(object, 'AssetState').try { |state| parse_asset_state(state)  },
-                         # Unsupported by Version One
-                         :created_at => '',
-                         :updated_at => ''}
+                         :created_at => find_text_attribute(object, 'CreateDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
+                         :updated_at => find_text_attribute(object, 'ChangeDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?}}
 
       super(simplified, prefix_option)
     end
@@ -375,7 +375,7 @@ module VersiononeAPI
 
     end
 
-    ISSUE_SELECTION_FIELDS = "Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Owners.Name,AssetState"
+    ISSUE_SELECTION_FIELDS = 'Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Owners.Name,AssetState,CreateDateUTC,ChangeDateUTC'
 
     UPDATEABLE_FIELDS = {
         'title' => 'Name',

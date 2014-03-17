@@ -68,6 +68,8 @@
       <Value>owner_nick</Value>
     </Attribute>
     <Attribute name="Ideas"/>
+    <Attribute name="ChangeDateUTC">2014-03-14T19:58:13.090</Attribute>
+    <Attribute name="CreateDateUTC">2014-03-14T19:58:12.680</Attribute>
   </Asset>
   <Asset href="/Trial30/rest-1.v1/Data/Story/1014" id="Story:1014">
     <Attribute name="AssetType">Story</Attribute>
@@ -139,5 +141,7 @@
       <Value>owner_nick</Value>
     </Attribute>
     <Attribute name="Ideas"/>
+    <Attribute name="ChangeDateUTC">2014-03-14T19:58:13.090</Attribute>
+    <Attribute name="CreateDateUTC">2014-03-14T19:58:12.680</Attribute>
   </Asset>
 </Assets>

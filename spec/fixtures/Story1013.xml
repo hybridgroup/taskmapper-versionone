@@ -67,4 +67,6 @@
     <Value>Joe Owner</Value>
   </Attribute>
   <Attribute name="Ideas"/>
+  <Attribute name="ChangeDateUTC">2014-03-14T19:58:13.090</Attribute>
+  <Attribute name="CreateDateUTC">2014-03-14T19:58:12.680</Attribute>
 </Asset>
