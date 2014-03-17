@@ -337,7 +337,8 @@ module VersiononeAPI
                          :assignee => find_value_attribute(object, 'Owners.Name') ,
                          :asset_state => find_text_attribute(object, 'AssetState').try { |state| parse_asset_state(state)  },
                          :created_at => find_text_attribute(object, 'CreateDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
-                         :updated_at => find_text_attribute(object, 'ChangeDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?}}
+                         :updated_at => find_text_attribute(object, 'ChangeDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
+                         :estimate => find_text_attribute(object, 'Estimate').try {|estimate| estimate.to_i }}
 
       super(simplified, prefix_option)
     end
@@ -375,7 +376,7 @@ module VersiononeAPI
 
     end
 
-    ISSUE_SELECTION_FIELDS = 'Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Owners.Name,AssetState,CreateDateUTC,ChangeDateUTC'
+    ISSUE_SELECTION_FIELDS = 'Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Owners.Name,AssetState,CreateDateUTC,ChangeDateUTC,Estimate'
 
     UPDATEABLE_FIELDS = {
         'title' => 'Name',
