@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe "TaskMapper::Versionone::Project" do
 
-  SELECTION_QUERY = 'sel=Name%2CDescription%2COwners.Name%2CCreateDateUTC%2CChangeDateUTC%2CChildren'
+  SELECTION_QUERY = 'sel=Name,Description,Owner.Name,CreateDateUTC,ChangeDateUTC,Children'
   before(:all) do
     headers = headers_for('admin', 'admin')
     @project_id = 1009

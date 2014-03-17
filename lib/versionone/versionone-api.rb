@@ -269,8 +269,7 @@ module VersiononeAPI
 
       def self.collection_path(prefix_options = {}, query_options = nil)
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-        query_options = SCOPE_SELECTION_QUERY_OPTIONS.merge(query_options)
-        "#{prefix(prefix_options)}Scope#{query_string(query_options)}"
+        "#{prefix(prefix_options)}Scope#{selection_query_string(query_options, false)}"
       end
 
       def self.element_path(id, prefix_options = {}, query_options = nil)
@@ -282,10 +281,7 @@ module VersiononeAPI
         scope_id = id.to_s
         scope_id.gsub!("Scope:", "")
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-        unless is_post
-          query_options = SCOPE_SELECTION_QUERY_OPTIONS.merge(query_options)
-        end
-        "#{prefix(prefix_options)}Scope/#{URI.escape scope_id}#{query_string(query_options)}"
+        "#{prefix(prefix_options)}Scope/#{URI.escape scope_id}#{selection_query_string(query_options, is_post)}"
       end
 
 
@@ -304,7 +300,7 @@ module VersiononeAPI
         super(simplified, prefix_option)
       end
 
-      SCOPE_SELECTION_QUERY_OPTIONS = {:sel => 'Name,Description,Owners.Name,CreateDateUTC,ChangeDateUTC,Children' }
+      SCOPE_SELECTION_QUERY_OPTIONS = 'sel=Name,Description,Owner.Name,CreateDateUTC,ChangeDateUTC,Children'
 
       UPDATEABLE_FIELDS = {
           'name' => 'Name',
@@ -327,6 +323,19 @@ module VersiononeAPI
       def scope_id
         scope_id = attributes[:id]
         scope_id.gsub!('Scope:', '')
+      end
+
+      private
+
+      def self.selection_query_string(options, is_post)
+        if is_post
+          query_str = query_string(options)
+        else
+          options =  (options.nil? || options.empty?) ? '' : "&#{options.to_query}"
+
+          query_str = "?#{SCOPE_SELECTION_QUERY_OPTIONS}#{options}"
+        end
+        query_str
       end
 
   end

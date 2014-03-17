@@ -4,7 +4,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
   before(:all) do
     headers = headers_for('admin', 'admin')
 
-    SCOPE_SELECTION_QUERY = 'sel=Name%2CDescription%2COwners.Name%2CCreateDateUTC%2CChangeDateUTC%2CChildren'
+    SCOPE_SELECTION_QUERY = 'sel=Name,Description,Owner.Name,CreateDateUTC,ChangeDateUTC,Children'
     SELECTION_QUERY = 'sel=Name%2CDescription%2CRequestedBy%2CScope%2CPriority.Name%2CStatus.Name%2COwners.Name%2CAssetState%2CCreateDateUTC%2CChangeDateUTC%2CEstimate'
 
     ActiveResource::HttpMock.respond_to do |mock|
