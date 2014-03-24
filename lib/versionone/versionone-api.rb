@@ -171,7 +171,7 @@ module VersiononeAPI
       val += '<Asset>'
       attributes.each_pair do |key, value|
         if(key == 'project_id')
-          val += "<Relation name='Scope' act='set'><Asset idref='Scope:#{xml_encode(value, :attr)}' /></Relation>"
+          val += "<Relation name='Scope' act='set'><Asset idref='Scope:#{value}' /></Relation>"
         elsif !getUpdateableFieldName(key).nil?
           val += "<Attribute name='#{getUpdateableFieldName(key)}' act='set'>#{xml_encode(value, :text)}</Attribute>"
         end
