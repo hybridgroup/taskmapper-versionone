@@ -192,7 +192,7 @@ module VersiononeAPI
       nil
     end
 
-    def self.instantiate_collection(collection, prefix_options = {})
+    def self.instantiate_collection(collection, original_params = {}, prefix_options = {})
       objects = collection.find {|x| x.has_key? :Assets }[:Assets]
       objects[:children].collect! { |record| instantiate_record(record, prefix_options) }
     end
