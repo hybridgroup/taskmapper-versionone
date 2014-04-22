@@ -1,17 +1,30 @@
+GIT
+  remote: https://github.com/cardboardit/taskmapper
+  revision: d7df9ea9b6897d41d017d2be6176724d300b315d
+  specs:
+    taskmapper (1.0.2)
+      activeresource (~> 4.0)
+      activesupport (~> 4.0)
+      hashie (~> 2.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
-    activemodel (3.2.14)
-      activesupport (= 3.2.14)
-      builder (~> 3.0.0)
-    activeresource (3.2.14)
-      activemodel (= 3.2.14)
-      activesupport (= 3.2.14)
-    activesupport (3.2.14)
-      i18n (~> 0.6, >= 0.6.4)
-      multi_json (~> 1.0)
+    activemodel (4.1.0)
+      activesupport (= 4.1.0)
+      builder (~> 3.1)
+    activeresource (4.0.0)
+      activemodel (~> 4.0)
+      activesupport (~> 4.0)
+      rails-observers (~> 0.1.1)
+    activesupport (4.1.0)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
     addressable (2.3.5)
-    builder (3.0.4)
+    builder (3.2.2)
     diff-lcs (1.2.4)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
@@ -23,10 +36,10 @@ GEM
       multi_json (~> 1.4)
       nokogiri (~> 1.5.2)
       oauth2
-    hashie (2.0.5)
+    hashie (2.1.1)
     highline (1.6.19)
     httpauth (0.2.0)
-    i18n (0.6.5)
+    i18n (0.6.9)
     jeweler (1.8.7)
       builder
       bundler (~> 1.0)
@@ -39,7 +52,8 @@ GEM
     json (1.8.0)
     jwt (0.1.8)
       multi_json (>= 1.5)
-    multi_json (1.7.9)
+    minitest (5.3.3)
+    multi_json (1.9.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
     nokogiri (1.5.10)
@@ -51,6 +65,8 @@ GEM
       multi_xml (~> 0.5)
       rack (~> 1.2)
     rack (1.5.2)
+    rails-observers (0.1.2)
+      activemodel (~> 4.0)
     rake (10.1.0)
     rcov (1.0.0)
     rdoc (4.0.1)
@@ -67,10 +83,9 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
-    taskmapper (1.0.1)
-      activeresource (~> 3.0)
-      activesupport (~> 3.0)
-      hashie (~> 2.0)
+    thread_safe (0.3.3)
+    tzinfo (1.1.0)
+      thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
@@ -81,4 +96,4 @@ DEPENDENCIES
   rcov (~> 1.0)
   rspec (~> 2.3)
   simplecov (~> 0.5)
-  taskmapper
+  taskmapper!
