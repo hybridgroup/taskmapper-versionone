@@ -269,7 +269,7 @@ module VersiononeAPI
 
       def self.collection_path(prefix_options = {}, query_options = nil)
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-        "#{prefix(prefix_options)}Scope#{selection_query_string(query_options, false)}"
+        "#{site.path}Scope#{selection_query_string(query_options, false)}"
       end
 
       def self.element_path(id, prefix_options = {}, query_options = nil)
@@ -281,7 +281,7 @@ module VersiononeAPI
         scope_id = id.to_s
         scope_id.gsub!("Scope:", "")
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-        "#{prefix(prefix_options)}Scope/#{URI.escape scope_id}#{selection_query_string(query_options, is_post)}"
+        "#{site.path}Scope/#{URI.escape scope_id}#{selection_query_string(query_options, is_post)}"
       end
 
 
@@ -345,14 +345,14 @@ module VersiononeAPI
 
     def self.collection_path(prefix_options = {}, query_options = nil)
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-        "#{prefix(prefix_options)}Story#{query_string(query_options)}"
+        "#{site.path}Story#{query_string(query_options)}"
       end
 
       def self.element_path(id, prefix_options = {}, query_options = nil)
         scope_id = id.to_s
         scope_id.gsub!("Story:", "")
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-        "#{prefix(prefix_options)}Story/#{URI.escape scope_id}#{query_string(query_options)}"
+        "#{site.path}Story/#{URI.escape scope_id}#{query_string(query_options)}"
       end
 
 
