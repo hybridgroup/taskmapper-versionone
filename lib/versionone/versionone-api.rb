@@ -259,7 +259,7 @@ module VersiononeAPI
   #   project.save
   #
   # Finding tickets
-  # 
+  #
   #   project = VersiononeAPI::Project.find('my_project')
   #   project.tickets
   #
@@ -355,7 +355,6 @@ module VersiononeAPI
         "#{site.path}Story/#{URI.escape scope_id}#{query_string(query_options)}"
       end
 
-
     def self.instantiate_record(record, prefix_option = {})
       object = record
       object = object.first if object.kind_of? Array
@@ -426,6 +425,14 @@ module VersiononeAPI
     def getUpdateableFieldName(key)
       UPDATEABLE_FIELDS[key]
     end
+
+    def destroy
+      run_callbacks :destroy do
+        prefix_options[:op] = 'Delete'
+        connection.post(element_path, self.class.headers)
+      end
+    end
+
 
   end
 

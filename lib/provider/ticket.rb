@@ -2,7 +2,7 @@ module TaskMapper::Provider
   module Versionone
     # Ticket class for taskmapper-versionone
     #
-    
+
     class Ticket < TaskMapper::Provider::Base::Ticket
       API = VersiononeAPI::Issue # The class to access the api's tickets
 
@@ -59,6 +59,9 @@ module TaskMapper::Provider
         :unstarted
       end
 
+      def destroy
+        @system_data[:client].destroy
+      end
     end
   end
 end
