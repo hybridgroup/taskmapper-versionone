@@ -418,7 +418,8 @@ module VersiononeAPI
         'description' => 'Description',
         #'requestor' => 'RequestedBy',
         #'priority' => 'Priority.Name',
-        #'status' => 'Status.Name',
+        'status' => 'Status.Name',
+        'estimate' => 'Estimate'
         #'assignee' => 'Owners.Name'
     }
 
