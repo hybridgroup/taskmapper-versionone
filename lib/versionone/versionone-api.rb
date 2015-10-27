@@ -97,8 +97,8 @@ module VersiononeAPI
   class ActiveResource::Base
     # store the attribute value in a thread local variable
     class << self
-      %w(host user password).each do |attr|
-
+      %w(host user password access_token).each do |attr|
+        p "ActiveResource::Base #{attr}"
         define_method(attr) do
           Thread.current["active_resource.#{attr}"]
         end
@@ -134,6 +134,25 @@ module VersiononeAPI
       self::Base.password = password
 
       resources.each do |klass|
+        klass.site = klass.site_format % "#{self.server}rest-1.v1/Data/"
+      end
+    end
+
+    #Sets up basic authentication credentials for all the resources.
+    def authenticate_token(servname, access_token)
+      p 'authenticate access_token'
+      self.server = servname
+      self.server << '/' unless self.server.end_with?('/')
+      # #@username = username
+      # #@password = password
+      # # self::Base.user = username
+      # # self::Base.password = password
+      # self::Base.access_token = access_token
+
+      self::Base.headers['Authorization'] = 'Bearer ' + access_token
+
+      resources.each do |klass|
+        p klass.site_format % "#{self.server}rest-1.v1/Data/"
         klass.site = klass.site_format % "#{self.server}rest-1.v1/Data/"
       end
     end
@@ -373,7 +392,7 @@ module VersiononeAPI
                          :asset_state => find_text_attribute(object, 'AssetState').try { |state| parse_asset_state(state)  },
                          :created_at => find_text_attribute(object, 'CreateDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
                          :updated_at => find_text_attribute(object, 'ChangeDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
-                         :estimate => find_text_attribute(object, 'Estimate').try {|estimate| estimate.to_i }}
+                         :password => find_text_attribute(object, 'Estimate').try {|estimate| estimate.to_i }}
 
       super(simplified, prefix_option)
     end

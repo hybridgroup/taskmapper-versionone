@@ -4,23 +4,31 @@ module TaskMapper::Provider
     include TaskMapper::Provider::Base
     TICKET_API = Versionone::Ticket # The class to access the api's tickets
     PROJECT_API = Versionone::Project # The class to access the api's projects
-    
+
     # This is for cases when you want to instantiate using TaskMapper::Provider::Versionone.new(auth)
     def self.new(auth = {})
       TaskMapper.new(:versionone, auth)
     end
-    
+
     # Providers must define an authorize method. This is used to initialize and set authentication
     # parameters to access the API
     def authorize(auth = {})
       @authentication ||= TaskMapper::Authenticator.new(auth)
       auth = @authentication
-      if auth.server.blank? and auth.username.blank? and auth.password.blank?
-        raise "Please provide server, username and password"
+      p auth.access_token
+      if auth.server.blank?
+        raise "Please provide server url"
+      elsif (auth.username.blank? and auth.password.blank?) && auth.access_token.blank?
+        raise "Please provide username and password or V1 Access Token"
       end
-      VersiononeAPI.authenticate(auth.server, auth.username, auth.password)
+      if auth.access_token
+        p 'auth.access_token'
+        VersiononeAPI.authenticate_token(auth.server, auth.access_token)
+      else
+        VersiononeAPI.authenticate(auth.server, auth.username, auth.password)
+      end
     end
-    
+
     # declare needed overloaded methods here
 
     def valid?
@@ -30,8 +38,6 @@ module TaskMapper::Provider
         false
       end
     end
-    
+
   end
 end
-
-

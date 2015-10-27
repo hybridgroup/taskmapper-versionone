@@ -1,10 +1,10 @@
 source "http://rubygems.org"
-gem 'taskmapper', :git => 'https://github.com/cardboardit/taskmapper'
+gem 'taskmapper', :git => 'https://github.com/DevJams/taskmapper.git'
 gem 'nokogiri'
 
-group :development do
-  gem "jeweler", "~> 1.6"
-  gem "rspec", "~> 2.3"
-  gem "simplecov", "~> 0.5", :platforms => :ruby_19
-  gem "rcov", "~> 1.0", :platforms => :ruby_18
+group :test, :development do
+  gem "rspec", "~> 3.3"
+  gem 'rake'
+  # gem "simplecov", "~> 0.5", :platforms => :ruby_19
+  # gem "rcov", "~> 1.0", :platforms => :ruby_18
 end

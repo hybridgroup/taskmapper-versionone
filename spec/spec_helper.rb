@@ -9,7 +9,7 @@ require 'taskmapper-versionone'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
-  config.color_enabled = true
+  config.color = true
 end
 
 def headers_for(username, password)
@@ -18,6 +18,20 @@ def headers_for(username, password)
       'Accept' => 'application/xml'
   }
   end
+
+def headers_for_access_token(access_token)
+  return {
+      'Authorization' => "Bearer #{access_token}".strip,
+      'Accept' => 'application/xml'
+  }
+end
+
+def post_headers_for_access_token(access_token)
+  return {
+      'Authorization' => "Bearer #{access_token}".strip,
+      'Content-Type' => 'application/xml'
+  }
+end
 
 def post_headers_for(username, password)
   return {
