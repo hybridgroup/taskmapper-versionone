@@ -98,7 +98,6 @@ module VersiononeAPI
     # store the attribute value in a thread local variable
     class << self
       %w(host user password access_token).each do |attr|
-        p "ActiveResource::Base #{attr}"
         define_method(attr) do
           Thread.current["active_resource.#{attr}"]
         end
@@ -140,7 +139,6 @@ module VersiononeAPI
 
     #Sets up basic authentication credentials for all the resources.
     def authenticate_token(servname, access_token)
-      p 'authenticate access_token'
       self.server = servname
       self.server << '/' unless self.server.end_with?('/')
       # #@username = username
@@ -152,7 +150,6 @@ module VersiononeAPI
       self::Base.headers['Authorization'] = 'Bearer ' + access_token
 
       resources.each do |klass|
-        p klass.site_format % "#{self.server}rest-1.v1/Data/"
         klass.site = klass.site_format % "#{self.server}rest-1.v1/Data/"
       end
     end

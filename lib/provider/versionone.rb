@@ -15,14 +15,13 @@ module TaskMapper::Provider
     def authorize(auth = {})
       @authentication ||= TaskMapper::Authenticator.new(auth)
       auth = @authentication
-      p auth.access_token
+
       if auth.server.blank?
         raise "Please provide server url"
       elsif (auth.username.blank? and auth.password.blank?) && auth.access_token.blank?
         raise "Please provide username and password or V1 Access Token"
       end
-      if auth.access_token
-        p 'auth.access_token'
+      if !auth.access_token.blank?
         VersiononeAPI.authenticate_token(auth.server, auth.access_token)
       else
         VersiononeAPI.authenticate(auth.server, auth.username, auth.password)
