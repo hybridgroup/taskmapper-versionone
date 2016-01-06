@@ -12,16 +12,23 @@ module TaskMapper::Provider
       def self.create(*options)
         issue = API.new(*options)
         issue.save!
-        ticket = self.new issue
+        ticket = self.find_by_id(issue.project_id, issue.id, issue.issuetype)
         ticket
       end
 
       ## {:where => "Scope='Scope:#{id}'" }
       # Accepts an integer id and returns the single ticket instance
       # Must be defined by the provider
-      def self.find_by_id(project_id, ticket_id)
+      def self.find_by_id(project_id, ticket_id, issuetype)
         if self::API.is_a? Class
-          self.new self::API.find(ticket_id, self::API.query_params_for_scope(project_id))
+          tix = nil
+          if issuetype.downcase == 'epic'
+            tix = self::API.find_epics(project_id)
+            tix = tix.last
+          else
+            tix = self::API.find(ticket_id, self::API.query_params_for_scope(project_id))
+          end
+          self.new tix
         else
           raise TaskMapper::Exception.new("#{self.name}::#{this_method} method must be implemented by the provider")
         end

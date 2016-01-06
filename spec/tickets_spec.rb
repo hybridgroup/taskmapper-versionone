@@ -107,10 +107,12 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
   end
 
   it "should be able to create a ticket" do
-    @ticket = @project.ticket!(:title => 'Ticket #12', :description => 'Body')
+    @ticket = @project.ticket!(:title => 'Ticket #12', :description => 'Body', :issuetype => "Story")
     @ticket.should be_an_instance_of(@klass)
     @ticket.id.should == 1072
     @ticket.url.should == "http://server/Trial30/story.mvc/Summary?oidToken=Story%3A1072"
+    expect(@ticket.save).to be_truthy
+
   end
 
   it "should be able to load all tickets based on attributes using updated_at field" do

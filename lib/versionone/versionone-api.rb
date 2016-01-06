@@ -84,6 +84,10 @@ module VersiononeAPI
       strip_asset_type(asset(asset_container)[:id].first, asset_type).to_i
     end
 
+    def find_full_asset_id(asset_container)
+      asset(asset_container)[:id]
+    end
+
     def strip_asset_type(id, asset_type)
       id.gsub!("#{asset_type}:", '') unless id.nil?
     end
@@ -188,6 +192,8 @@ module VersiononeAPI
       attributes.each_pair do |key, value|
         if(key == 'project_id')
           val += "<Relation name='Scope' act='set'><Asset idref='Scope:#{value}' /></Relation>"
+        elsif key == 'parent' && !value.nil? && value != ''
+          val += "<Relation name='Super' act='set'><Asset idref='#{value}' /></Relation>"
         elsif !getUpdateableFieldName(key).nil?
           val += "<Attribute name='#{getUpdateableFieldName(key)}' act='set'>#{xml_encode(value, :text)}</Attribute>"
         end
@@ -214,6 +220,7 @@ module VersiononeAPI
     end
 
     def update
+    #   p "Base update"
       connection.post(update_path, encode, self.class.headers).tap do |response|
         load_attributes_from_response(response)
       end
@@ -224,6 +231,7 @@ module VersiononeAPI
     end
 
     def load_attributes_from_response(response)
+      p "Base load_attributes_from_response"
       if (response_code_allows_body?(response.code) &&
           (response['Content-Length'].nil? || response['Content-Length'] != "0") &&
           !response.body.nil? && response.body.strip.size > 0)
@@ -253,7 +261,14 @@ module VersiononeAPI
           }
       }
     end
-
+    def self.epic_query_params_for_scope(id)
+      {
+          :params => {
+              :where => "Scope='Scope:#{id}'",
+              :sel => VersiononeAPI::Issue::EPIC_SELECTION_FIELDS
+          }
+      }
+    end
   end
 
    # Find projects
@@ -289,10 +304,12 @@ module VersiononeAPI
       end
 
       def self.element_path(id, prefix_options = {}, query_options = nil)
+        # p "Scope self.element_path"
         self.extended_element_path(id, false, prefix_options, query_options)
       end
 
       def self.extended_element_path(id, is_post, prefix_options = {}, query_options = nil)
+        # p "Scope self.extended_element_path"
         #id format is "resource_name:id", but element_path just needs the id, without the resource_name.
         scope_id = id.to_s
         scope_id.gsub!("Scope:", "")
@@ -302,6 +319,7 @@ module VersiononeAPI
 
 
       def self.instantiate_record(record, prefix_option = {})
+        # p "Scope self.instantiate_record"
         object = record
         object = object.first if object.kind_of? Array
 
@@ -325,6 +343,7 @@ module VersiononeAPI
       }
 
       def update_path
+        # p "Scope update_path"
         self.class.extended_element_path(to_param, true, prefix_options)
       end
 
@@ -333,6 +352,7 @@ module VersiononeAPI
       end
 
       def tickets(options = {})
+        # p "Scope tickets"
         Issue.find(:all, :params => options.update(:scope_id => scope_id))
       end
 
@@ -358,38 +378,71 @@ module VersiononeAPI
 
   class Issue < Base
     extend HasAssets
+    before_save :save_routing
+
+    @@rest_uri = nil
+    @@route = nil
 
     def self.collection_path(prefix_options = {}, query_options = nil)
-        prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-        "#{site.path}Story#{query_string(query_options)}"
+    #   p "Issue self.collection_path"
+      prefix_options, query_options = split_options(prefix_options) if query_options.nil?
+      if @@route.nil?
+        return "#{site.path}Story#{query_string(query_options)}"
+      else
+        route = @@route
+        route[0] = route[0].capitalize
+        return "#{site.path}#{route}#{query_string(query_options)}"
       end
 
-      def self.element_path(id, prefix_options = {}, query_options = nil)
-        scope_id = id.to_s
-        scope_id.gsub!("Story:", "")
-        prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-        "#{site.path}Story/#{URI.escape scope_id}#{query_string(query_options)}"
+    end
+
+    def self.element_path(id, prefix_options = {}, query_options = nil)
+    #   p "Issue self.element_path"
+      scope_id = id.to_s
+      scope_id.gsub!("Story:", "")
+      prefix_options, query_options = split_options(prefix_options) if query_options.nil?
+      if !@@rest_uri.nil?
+        # p 'return rest_uri'
+        # p @@rest_uri[0]
+        return @@rest_uri[0]
+      elsif !@@route.nil?
+        route = @@route
+        route[0] = route[0].capitalize
+        return "#{site.path}#{route}/#{URI.escape scope_id}#{query_string(query_options)}"
+      else
+        return "#{site.path}Story/#{URI.escape scope_id}#{query_string(query_options)}"
       end
+    end
 
     def self.instantiate_record(record, prefix_option = {})
       object = record
       object = object.first if object.kind_of? Array
 
       asset_id = find_asset_id(object, 'Story')
-      simplified = {:id => asset_id,
-                         :href => href_from_id(asset_id),
-                         :rest_uri => find_asset_href(object),
-                         :title => find_text_attribute(object, 'Name'),
-                         :description => find_text_attribute(object, 'Description'),
-                         :requestor => find_text_attribute(object, 'RequestedBy'),
-                         :project_id => find_relation_id(object, 'Scope', 'Scope'),
-                         :priority => find_text_attribute(object, 'Priority.Name'),
-                         :status_name => find_text_attribute(object, 'Status.Name').try {|status| status.parameterize.underscore.to_sym},
-                         :assignee => find_value_attribute(object, 'Owners.Name') ,
-                         :asset_state => find_text_attribute(object, 'AssetState').try { |state| parse_asset_state(state)  },
-                         :created_at => find_text_attribute(object, 'CreateDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
-                         :updated_at => find_text_attribute(object, 'ChangeDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
-                         :password => find_text_attribute(object, 'Estimate').try {|estimate| estimate.to_i }}
+      asset_id = find_asset_id(object, 'Epic') if asset_id.nil? || asset_id == 0
+      issuetype = find_text_attribute(object, 'AssetType')
+
+      parent = find_relation_id(object, 'Super', 'Epic')
+      parent = find_relation_id(object, 'Super', 'Story') if parent.nil?
+
+      simplified = {
+          :id => asset_id,
+          :full_id => "#{issuetype}:#{asset_id}",
+          :href => href_from_id(issuetype ,asset_id),
+          :rest_uri => find_asset_href(object),
+          :title => find_text_attribute(object, 'Name'),
+          :description => find_text_attribute(object, 'Description'),
+          :requestor => find_text_attribute(object, 'RequestedBy'),
+          :project_id => find_relation_id(object, 'Scope', 'Scope'),
+          :priority => find_text_attribute(object, 'Priority.Name'),
+          :status_name => find_text_attribute(object, 'Status.Name').try {|status| status.parameterize.underscore.to_sym},
+          :assignee => find_value_attribute(object, 'Owners.Name') ,
+          :asset_state => find_text_attribute(object, 'AssetState').try { |state| parse_asset_state(state)  },
+          :issuetype => issuetype.downcase,
+          :created_at => find_text_attribute(object, 'CreateDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
+          :updated_at => find_text_attribute(object, 'ChangeDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
+          :parent => parent,
+          :estimate => find_text_attribute(object, 'Estimate').try {|estimate| estimate.to_i }}
 
       super(simplified, prefix_option)
     end
@@ -416,18 +469,22 @@ module VersiononeAPI
       end
     end
 
-    def self.href_from_id(id)
-     "#{VersiononeAPI.server}story.mvc/Summary?oidToken=Story%3A#{id}"
+    def self.href_from_id(issuetype, id )
+      route = issuetype
+      route[0] = route[0].capitalize
+    
+     "#{VersiononeAPI.server}#{route.downcase}.mvc/Summary?oidToken=#{route}%3A#{id}"
     end
 
     # Takes a response from a typical create post and pulls the ID out
     def id_from_response(response)
       decoded = self.class.format.decode(response.body).first
       self.class.find_asset_id(decoded, 'Story')
-
     end
 
-    ISSUE_SELECTION_FIELDS = 'Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Owners.Name,AssetState,CreateDateUTC,ChangeDateUTC,Estimate'
+    ISSUE_SELECTION_FIELDS = 'Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Owners.Name,AssetState,AssetType,Super,CreateDateUTC,ChangeDateUTC,Estimate'
+
+    EPIC_SELECTION_FIELDS = 'Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Owners.Name,AssetState,AssetType,Super,CreateDateUTC,ChangeDateUTC'
 
     UPDATEABLE_FIELDS = {
         'title' => 'Name',
@@ -441,6 +498,49 @@ module VersiononeAPI
 
     def getUpdateableFieldName(key)
       UPDATEABLE_FIELDS[key]
+    end
+
+    def self.find_epics (id)
+      @@route = "Epic"
+      find(:all, epic_query_params_for_scope(id))
+    end
+
+    def self.find_stories (id)
+      @@route = "Story"
+      find(:all, query_params_for_scope(id))
+    end
+
+    def self.find_epic_by_id (project_id, epic_id)
+      @@route = "Epic"
+      find(:all, epic_query_params_for_scope(project_id))
+
+    #   find(epic_id, epic_query_params_for_scope(project_id))
+    end
+
+    def self.find_story_by_id (project_id, story_id)
+      @@route = "Story"
+
+      find(story_id, query_params_for_scope(project_id))
+    end
+
+
+    # def save!
+    #   issuetype = self.issuetype if self.issuetype?
+    #   rest_uri = self.rest_uri if self.rest_uri
+    #
+    #   @@route = issuetype
+    #
+    #   save || raise(ResourceInvalid.new(self))
+    # end
+
+    def save_routing
+    #   p "save_routing"
+      issuetype = rest_uri = nil
+      issuetype = self.issuetype if self.issuetype?
+      rest_uri = self.rest_uri if self.rest_uri?
+
+      @@route = issuetype
+      @@rest_uri = rest_uri
     end
 
     def destroy

@@ -18,7 +18,7 @@ module TaskMapper::Provider
 
       if auth.server.blank?
         raise "Please provide server url"
-      elsif (auth.username.blank? and auth.password.blank?) && auth.access_token.blank?
+      elsif (auth.username.blank? && auth.password.blank?) && auth.access_token.blank?
         raise "Please provide username and password or V1 Access Token"
       end
       if !auth.access_token.blank?
