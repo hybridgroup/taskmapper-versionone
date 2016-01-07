@@ -80,13 +80,13 @@ module TaskMapper::Provider
         "#{VersiononeAPI.server}story.mvc/Summary?oidToken=Story%3A#{id}"
       end
 
-      def status
-        return :completed if self.asset_state == :closed
-        return :unstarted if self.asset_state == :deleted
-        return :started if (!self.status_name.nil? && !self.status_name.empty?)
-      
-        :unstarted
-      end
+      # def status
+      #   return :completed if self.asset_state == :closed
+      #   return :unstarted if self.asset_state == :deleted
+      #   return :started if (!self.status_name.nil? && !self.status_name.empty?)
+      #
+      #   :unstarted
+      # end
 
       def destroy
         @system_data[:client].destroy

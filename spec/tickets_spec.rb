@@ -95,7 +95,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @ticket = @project.ticket(@ticket_id)
     #@ticket.save.should == nil
     @ticket.description = 'hello'
-    @ticket.status = :in_progress
+    @ticket.status = :unstarted
     @ticket.save.should == true
   end
 

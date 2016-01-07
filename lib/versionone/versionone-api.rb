@@ -196,11 +196,12 @@ module VersiononeAPI
 
 
     def parse_status_code(status)
+      status = status.to_s
       unless status.nil?
         case status
-          when :done
+          when 'done'
             "StoryStatus:135"
-          when :in_progress
+          when 'in_progress'
             "StoryStatus:134"
           else
             "StoryStatus:133"
@@ -220,8 +221,11 @@ module VersiononeAPI
             val += "<Relation name='Super' act='set'><Asset idref='#{value}' /></Relation>"
           elsif !getUpdateableFieldName(key).nil?
             if key == 'status'
-              status = parse_status_code(value)
-              val += "<Attribute name='Status' act='set'>#{xml_encode(status, :text)}</Attribute>"
+              unless value.to_s == :unstarted.to_s
+
+                status = parse_status_code(value)
+                val += "<Attribute name='Status' act='set'>#{xml_encode(status, :text)}</Attribute>"
+              end
             else
                 val += "<Attribute name='#{getUpdateableFieldName(key)}' act='set'>#{xml_encode(value, :text)}</Attribute>"
             end
@@ -236,8 +240,10 @@ module VersiononeAPI
           #   val += "<Relation name='Super' act='set'><Asset idref='#{value}' /></Relation>"
           elsif !getUpdateableFieldName(key).nil? && updated_fields.include?(key)
             if key == 'status'
-              status = parse_status_code(value)
-              val += "<Attribute name='Status' act='set'>#{xml_encode(status, :text)}</Attribute>"
+              unless value.to_s == :unstarted.to_s
+                status = parse_status_code(value)
+                val += "<Attribute name='Status' act='set'>#{xml_encode(status, :text)}</Attribute>"
+              end
             else
               val += "<Attribute name='#{getUpdateableFieldName(key)}' act='set'>#{xml_encode(value, :text)}</Attribute>"
             end
@@ -523,6 +529,14 @@ module VersiononeAPI
           :unknown
       end
     end
+
+    # def parse_status
+    #   return :completed if self.asset_state == :closed
+    #   return :unstarted if self.asset_state == :deleted
+    #   return :started if (!self.status_name.nil? && !self.status_name.empty?)
+    #
+    #   :unstarted
+    # end
 
     def self.href_from_id(issuetype, id )
       route = issuetype
