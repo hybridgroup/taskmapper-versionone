@@ -439,8 +439,6 @@ module VersiononeAPI
 
     def self.collection_path(prefix_options = {}, query_options = nil)
     #   p "Issue self.collection_path"
-      @route =
-
       prefix_options, query_options = split_options(prefix_options) if query_options.nil?
       if @route.nil?
         return "#{site.path}Story#{query_string(query_options)}"
