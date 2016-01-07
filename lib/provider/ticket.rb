@@ -19,7 +19,7 @@ module TaskMapper::Provider
       ## {:where => "Scope='Scope:#{id}'" }
       # Accepts an integer id and returns the single ticket instance
       # Must be defined by the provider
-      def self.find_by_id(project_id, ticket_id, issuetype)
+      def self.find_by_id(project_id, ticket_id, issuetype = 'story')
         if self::API.is_a? Class
           tix = nil
           if issuetype.downcase == 'epic'
@@ -44,8 +44,30 @@ module TaskMapper::Provider
         end
       end
 
+      def save
+        if @system_data and (something = @system_data[:client]) and something.respond_to?(:attributes)
+          changes = 0
+          updated_fields = []
+          something.attributes.each do |k, v|
+            if self.send(k) != v
+              something.send(k + '=', self.send(k))
+              updated_fields << k
+              changes += 1
+              p something
+
+            elsif self.send(k) != nil?
+              p something
+            end
+          end
+          something.class.set_updated_fields updated_fields
+          something.save if changes > 0
+        else
+          raise TaskMapper::Exception.new("#{self.class.name}::#{this_method} method must be implemented by the provider")
+        end
+      end
+
       def resolution
-        self.status_name
+        self.status
       end
 
       def resolution=(value)
@@ -62,7 +84,7 @@ module TaskMapper::Provider
         return :completed if self.asset_state == :closed
         return :unstarted if self.asset_state == :deleted
         return :started if (!self.status_name.nil? && !self.status_name.empty?)
-
+      
         :unstarted
       end
 

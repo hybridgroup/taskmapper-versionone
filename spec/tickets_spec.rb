@@ -5,7 +5,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     headers = headers_for('admin', 'admin')
 
     SCOPE_SELECTION_QUERY = 'sel=Name,Description,Owner.Name,CreateDateUTC,ChangeDateUTC,Children'
-    SELECTION_QUERY = 'sel=Name%2CDescription%2CRequestedBy%2CScope%2CPriority.Name%2CStatus.Name%2COwners.Name%2CAssetState%2CCreateDateUTC%2CChangeDateUTC%2CEstimate'
+    SELECTION_QUERY = 'sel=Name%2CDescription%2CRequestedBy%2CScope%2CPriority.Name%2CStatus.Name%2COwners.Name%2CAssetState%2CAssetType%2CSuper%2CCreateDateUTC%2CChangeDateUTC%2CEstimate'
 
     ActiveResource::HttpMock.respond_to do |mock|
       mock.get "/Trial30/rest-1.v1/Data/Scope/1009?#{SCOPE_SELECTION_QUERY}", headers, fixture_for('Scope1009'), 200
@@ -95,6 +95,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @ticket = @project.ticket(@ticket_id)
     #@ticket.save.should == nil
     @ticket.description = 'hello'
+    @ticket.status = :in_progress
     @ticket.save.should == true
   end
 

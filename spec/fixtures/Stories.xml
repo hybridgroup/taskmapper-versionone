@@ -13,6 +13,7 @@
     <Attribute name="CreateDateUTC">2013-06-11T13:41:28.377</Attribute>
     <Attribute name="ChangeDateUTC">2013-06-11T14:09:40.007</Attribute>
     <Attribute name="Estimate">1</Attribute>
+    <Attribute name="AssetType">Story</Attribute>
     <Attribute name="Scope.Name">WhiteWater</Attribute>
     <Attribute name="Owners.Name">
       <Value>Guy de Someplace</Value>
@@ -31,6 +32,7 @@
     <Attribute name="CreateDateUTC">2013-06-11T13:42:28.733</Attribute>
     <Attribute name="ChangeDateUTC">2013-06-11T20:20:12.480</Attribute>
     <Attribute name="Estimate">1</Attribute>
+    <Attribute name="AssetType">Story</Attribute>
     <Attribute name="Scope.Name">WhiteWater</Attribute>
     <Attribute name="Owners.Name">
       <Value>Guy de Someplace</Value>

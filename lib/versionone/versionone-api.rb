@@ -186,20 +186,71 @@ module VersiononeAPI
       super
     end
 
+
+
+        # StoryStatus:133 = future
+# StoryStatus:134 = in progress
+# StoryStatus:135 = done
+
+
+
+
+    def parse_status_code(status)
+      unless status.nil?
+        case status
+          when :done
+            "StoryStatus:135"
+          when :in_progress
+            "StoryStatus:134"
+          else
+            "StoryStatus:133"
+        end
+      end
+    end
+
     def encode(options={})
+      updated_fields = self.class.updated_fields
       val = ''
-      val += '<Asset>'
-      attributes.each_pair do |key, value|
-        if(key == 'project_id')
-          val += "<Relation name='Scope' act='set'><Asset idref='Scope:#{value}' /></Relation>"
-        elsif key == 'parent' && !value.nil? && value != ''
-          val += "<Relation name='Super' act='set'><Asset idref='#{value}' /></Relation>"
-        elsif !getUpdateableFieldName(key).nil?
-          val += "<Attribute name='#{getUpdateableFieldName(key)}' act='set'>#{xml_encode(value, :text)}</Attribute>"
+       val += '<Asset>'
+      if !updated_fields.any?
+        attributes.each_pair do |key, value|
+          if(key == 'project_id')
+            val += "<Relation name='Scope' act='set'><Asset idref='Scope:#{value}' /></Relation>"
+          elsif key == 'parent' && !value.nil? && value != ''
+            val += "<Relation name='Super' act='set'><Asset idref='#{value}' /></Relation>"
+          elsif !getUpdateableFieldName(key).nil?
+            if key == 'status'
+              status = parse_status_code(value)
+              val += "<Attribute name='Status' act='set'>#{xml_encode(status, :text)}</Attribute>"
+            else
+                val += "<Attribute name='#{getUpdateableFieldName(key)}' act='set'>#{xml_encode(value, :text)}</Attribute>"
+            end
+          end
+
+        end
+      else
+        attributes.each_pair do |key, value|
+          if(key == 'project_id')
+            val += "<Relation name='Scope' act='set'><Asset idref='Scope:#{value}' /></Relation>"
+          # elsif key == 'parent' && !value.nil? && value != ''  <- Not modifying hierarchy
+          #   val += "<Relation name='Super' act='set'><Asset idref='#{value}' /></Relation>"
+          elsif !getUpdateableFieldName(key).nil? && updated_fields.include?(key)
+            if key == 'status'
+              status = parse_status_code(value)
+              val += "<Attribute name='Status' act='set'>#{xml_encode(status, :text)}</Attribute>"
+            else
+              val += "<Attribute name='#{getUpdateableFieldName(key)}' act='set'>#{xml_encode(value, :text)}</Attribute>"
+            end
+          end
+
         end
 
       end
+
       val += '</Asset>'
+      p "encoded:"
+      p val
+      val
     end
 
     def xml_encode(value, encode_constraints)
@@ -220,7 +271,7 @@ module VersiononeAPI
     end
 
     def update
-    #   p "Base update"
+      p "Base update"
       connection.post(update_path, encode, self.class.headers).tap do |response|
         load_attributes_from_response(response)
       end
@@ -231,7 +282,7 @@ module VersiononeAPI
     end
 
     def load_attributes_from_response(response)
-      p "Base load_attributes_from_response"
+      p 'Base load_attributes_from_response'
       if (response_code_allows_body?(response.code) &&
           (response['Content-Length'].nil? || response['Content-Length'] != "0") &&
           !response.body.nil? && response.body.strip.size > 0)
@@ -379,17 +430,22 @@ module VersiononeAPI
   class Issue < Base
     extend HasAssets
     before_save :save_routing
+    class << self; attr_accessor :test, :rest_uri,:route, :updated_fields end
+    @test = 8
 
-    @@rest_uri = nil
-    @@route = nil
+    @rest_uri = nil
+    @route = nil
+    @updated_fields = []
 
     def self.collection_path(prefix_options = {}, query_options = nil)
     #   p "Issue self.collection_path"
+      @route =
+
       prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-      if @@route.nil?
+      if @route.nil?
         return "#{site.path}Story#{query_string(query_options)}"
       else
-        route = @@route
+        route = @route
         route[0] = route[0].capitalize
         return "#{site.path}#{route}#{query_string(query_options)}"
       end
@@ -397,16 +453,17 @@ module VersiononeAPI
     end
 
     def self.element_path(id, prefix_options = {}, query_options = nil)
-    #   p "Issue self.element_path"
+      p "Issue self.element_path"
       scope_id = id.to_s
       scope_id.gsub!("Story:", "")
       prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-      if !@@rest_uri.nil?
-        # p 'return rest_uri'
-        # p @@rest_uri[0]
-        return @@rest_uri[0]
-      elsif !@@route.nil?
-        route = @@route
+
+      p "@rest_uri"
+      p @rest_uri
+      if !@rest_uri.nil?
+        return @rest_uri[0]
+      elsif !@route.nil?
+        route = @route
         route[0] = route[0].capitalize
         return "#{site.path}#{route}/#{URI.escape scope_id}#{query_string(query_options)}"
       else
@@ -435,7 +492,7 @@ module VersiononeAPI
           :requestor => find_text_attribute(object, 'RequestedBy'),
           :project_id => find_relation_id(object, 'Scope', 'Scope'),
           :priority => find_text_attribute(object, 'Priority.Name'),
-          :status_name => find_text_attribute(object, 'Status.Name').try {|status| status.parameterize.underscore.to_sym},
+          :status => find_text_attribute(object, 'Status.Name').try {|status| status.parameterize.underscore.to_sym},
           :assignee => find_value_attribute(object, 'Owners.Name') ,
           :asset_state => find_text_attribute(object, 'AssetState').try { |state| parse_asset_state(state)  },
           :issuetype => issuetype.downcase,
@@ -501,24 +558,24 @@ module VersiononeAPI
     end
 
     def self.find_epics (id)
-      @@route = "Epic"
+      @route = "Epic"
       find(:all, epic_query_params_for_scope(id))
     end
 
     def self.find_stories (id)
-      @@route = "Story"
+      @route = "Story"
       find(:all, query_params_for_scope(id))
     end
 
     def self.find_epic_by_id (project_id, epic_id)
-      @@route = "Epic"
+      @route = "Epic"
       find(:all, epic_query_params_for_scope(project_id))
 
     #   find(epic_id, epic_query_params_for_scope(project_id))
     end
 
     def self.find_story_by_id (project_id, story_id)
-      @@route = "Story"
+      @route = "Story"
 
       find(story_id, query_params_for_scope(project_id))
     end
@@ -528,19 +585,39 @@ module VersiononeAPI
     #   issuetype = self.issuetype if self.issuetype?
     #   rest_uri = self.rest_uri if self.rest_uri
     #
-    #   @@route = issuetype
+    #   @route = issuetype
     #
     #   save || raise(ResourceInvalid.new(self))
     # end
 
+    def self.set_route route
+      @route = route
+    end
+
+    def self.get_route
+      @route
+    end
+
+    def self.set_rest_uri rest_uri
+      @rest_uri = rest_uri
+    end
+
+    def self.get_rest_uri
+      @rest_uri
+    end
+
+    def self.set_updated_fields fields
+      @updated_fields = fields
+    end
+
+
     def save_routing
-    #   p "save_routing"
+      p "save_routing"
       issuetype = rest_uri = nil
       issuetype = self.issuetype if self.issuetype?
       rest_uri = self.rest_uri if self.rest_uri?
-
-      @@route = issuetype
-      @@rest_uri = rest_uri
+      self.class.set_route issuetype
+      self.class.set_rest_uri rest_uri
     end
 
     def destroy
