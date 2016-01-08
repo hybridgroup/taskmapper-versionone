@@ -221,7 +221,7 @@ module VersiononeAPI
             val += "<Relation name='Super' act='set'><Asset idref='#{value}' /></Relation>"
           elsif !getUpdateableFieldName(key).nil?
             if key == 'status'
-              unless value.to_s == :unstarted.to_s
+              unless value.to_s == :unstarted.to_s || value.nil? || self.issuetype.downcase == "epic"
 
                 status = parse_status_code(value)
                 val += "<Attribute name='Status' act='set'>#{xml_encode(status, :text)}</Attribute>"
@@ -240,7 +240,7 @@ module VersiononeAPI
           #   val += "<Relation name='Super' act='set'><Asset idref='#{value}' /></Relation>"
           elsif !getUpdateableFieldName(key).nil? && updated_fields.include?(key)
             if key == 'status'
-              unless value.to_s == :unstarted.to_s
+              unless value.to_s == :unstarted.to_s  || value.nil? || self.issuetype.downcase == "epic"
                 status = parse_status_code(value)
                 val += "<Attribute name='Status' act='set'>#{xml_encode(status, :text)}</Attribute>"
               end
@@ -635,11 +635,11 @@ module VersiononeAPI
     def destroy
       run_callbacks :destroy do
         prefix_options[:op] = 'Delete'
-        connection.post(element_path, self.class.headers)
+        path = element_path
+        p "destroy path"
+        p path
+        connection.post(path, self.class.headers)
       end
     end
-
-
   end
-
 end

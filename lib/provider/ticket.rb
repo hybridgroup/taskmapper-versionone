@@ -53,10 +53,6 @@ module TaskMapper::Provider
               something.send(k + '=', self.send(k))
               updated_fields << k
               changes += 1
-              p something
-
-            elsif self.send(k) != nil?
-              p something
             end
           end
           something.class.set_updated_fields updated_fields
@@ -89,6 +85,8 @@ module TaskMapper::Provider
       # end
 
       def destroy
+        p 'here destruction lies'
+        
         @system_data[:client].destroy
       end
     end
