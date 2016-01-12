@@ -8,7 +8,6 @@ module TaskMapper::Provider
 
       attr_accessor :prefix_options
 
-
       def self.create(*options)
         issue = API.new(*options)
         issue.save!
@@ -46,9 +45,16 @@ module TaskMapper::Provider
 
       def save
         if @system_data and (something = @system_data[:client]) and something.respond_to?(:attributes)
+        #   p 'something'
+        #   p something
+        
           changes = 0
           updated_fields = []
           something.attributes.each do |k, v|
+            # p "compare attributes on save"
+            # p self.send(k)
+            # p v
+          
             if self.send(k) != v
               something.send(k + '=', self.send(k))
               updated_fields << k
@@ -85,7 +91,7 @@ module TaskMapper::Provider
       # end
 
       def destroy
-        p 'here destruction lies'
+        # p 'here destruction lies'
         
         @system_data[:client].destroy
       end

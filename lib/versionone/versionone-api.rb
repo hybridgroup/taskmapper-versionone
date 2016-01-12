@@ -187,14 +187,6 @@ module VersiononeAPI
     end
 
 
-
-        # StoryStatus:133 = future
-# StoryStatus:134 = in progress
-# StoryStatus:135 = done
-
-
-
-
     def parse_status_code(status)
       status = status.to_s
       unless status.nil?
@@ -210,10 +202,10 @@ module VersiononeAPI
     end
 
     def encode(options={})
-      updated_fields = self.class.updated_fields
+        updated_fields = self.class.updated_fields
       val = ''
        val += '<Asset>'
-      if !updated_fields.any?
+      if updated_fields.nil?
         attributes.each_pair do |key, value|
           if(key == 'project_id')
             val += "<Relation name='Scope' act='set'><Asset idref='Scope:#{value}' /></Relation>"
@@ -232,7 +224,9 @@ module VersiononeAPI
           end
 
         end
-      else
+      elsif updated_fields.any?
+        # p "updated_fields"
+        # p updated_fields
         attributes.each_pair do |key, value|
           if(key == 'project_id')
             val += "<Relation name='Scope' act='set'><Asset idref='Scope:#{value}' /></Relation>"
@@ -254,8 +248,9 @@ module VersiononeAPI
       end
 
       val += '</Asset>'
-      p "encoded:"
-      p val
+      updated_fields = self.class.updated_fields = nil
+    #   p "encoded:"
+    #   p val
       val
     end
 
@@ -277,7 +272,7 @@ module VersiononeAPI
     end
 
     def update
-      p "Base update"
+
       connection.post(update_path, encode, self.class.headers).tap do |response|
         load_attributes_from_response(response)
       end
@@ -288,7 +283,7 @@ module VersiononeAPI
     end
 
     def load_attributes_from_response(response)
-      p 'Base load_attributes_from_response'
+    #   p 'Base load_attributes_from_response'
       if (response_code_allows_body?(response.code) &&
           (response['Content-Length'].nil? || response['Content-Length'] != "0") &&
           !response.body.nil? && response.body.strip.size > 0)
@@ -441,7 +436,7 @@ module VersiononeAPI
 
     @rest_uri = nil
     @route = nil
-    @updated_fields = []
+    @updated_fields = nil
 
     def self.collection_path(prefix_options = {}, query_options = nil)
     #   p "Issue self.collection_path"
@@ -457,13 +452,13 @@ module VersiononeAPI
     end
 
     def self.element_path(id, prefix_options = {}, query_options = nil)
-      p "Issue self.element_path"
+    #   p "Issue self.element_path"
       scope_id = id.to_s
       scope_id.gsub!("Story:", "")
       prefix_options, query_options = split_options(prefix_options) if query_options.nil?
 
-      p "@rest_uri"
-      p @rest_uri
+    #   p "@rest_uri"
+    #   p @rest_uri
       if !@rest_uri.nil?
         return @rest_uri[0]
       elsif !@route.nil?
@@ -503,7 +498,8 @@ module VersiononeAPI
           :created_at => find_text_attribute(object, 'CreateDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
           :updated_at => find_text_attribute(object, 'ChangeDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
           :parent => parent,
-          :estimate => find_text_attribute(object, 'Estimate').try {|estimate| estimate.to_i }}
+          :estimate => find_text_attribute(object, 'Estimate') #.try {|estimate| estimate.to_i }
+          }
 
       super(simplified, prefix_option)
     end
@@ -530,13 +526,6 @@ module VersiononeAPI
       end
     end
 
-    # def parse_status
-    #   return :completed if self.asset_state == :closed
-    #   return :unstarted if self.asset_state == :deleted
-    #   return :started if (!self.status_name.nil? && !self.status_name.empty?)
-    #
-    #   :unstarted
-    # end
 
     def self.href_from_id(issuetype, id )
       route = issuetype
@@ -592,16 +581,6 @@ module VersiononeAPI
       find(story_id, query_params_for_scope(project_id))
     end
 
-
-    # def save!
-    #   issuetype = self.issuetype if self.issuetype?
-    #   rest_uri = self.rest_uri if self.rest_uri
-    #
-    #   @route = issuetype
-    #
-    #   save || raise(ResourceInvalid.new(self))
-    # end
-
     def self.set_route route
       @route = route
     end
@@ -624,7 +603,7 @@ module VersiononeAPI
 
 
     def save_routing
-      p "save_routing"
+    #   p "save_routing"
       issuetype = rest_uri = nil
       issuetype = self.issuetype if self.issuetype?
       rest_uri = self.rest_uri if self.rest_uri?
@@ -636,8 +615,8 @@ module VersiononeAPI
       run_callbacks :destroy do
         prefix_options[:op] = 'Delete'
         path = element_path
-        p "destroy path"
-        p path
+        # p "destroy path"
+        # p path
         connection.post(path, self.class.headers)
       end
     end
