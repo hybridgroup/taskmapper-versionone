@@ -91,9 +91,14 @@ module TaskMapper::Provider
       # end
 
       def destroy
-        # p 'here destruction lies'
-        
-        @system_data[:client].destroy
+
+        begin
+          @system_data[:client].destroy
+        rescue ActiveResource::BadRequest
+          msg = "Cannot delete portfolio items with child elements in VersionOne. Please review your portfolio items in VersionOne to ensure proper deletions."
+          raise TaskMapper::Exception.new(msg)
+        end
+
       end
     end
   end

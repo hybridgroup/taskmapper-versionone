@@ -131,8 +131,7 @@ module VersiononeAPI
     def authenticate(servname, username, password)
       self.server = servname
       self.server << '/' unless self.server.end_with?('/')
-      #@username = username
-      #@password = password
+
       self::Base.user = username
       self::Base.password = password
 
@@ -145,11 +144,6 @@ module VersiononeAPI
     def authenticate_token(servname, access_token)
       self.server = servname
       self.server << '/' unless self.server.end_with?('/')
-      # #@username = username
-      # #@password = password
-      # # self::Base.user = username
-      # # self::Base.password = password
-      # self::Base.access_token = access_token
 
       self::Base.headers['Authorization'] = 'Bearer ' + access_token
 
@@ -225,8 +219,6 @@ module VersiononeAPI
 
         end
       elsif updated_fields.any?
-        # p "updated_fields"
-        # p updated_fields
         attributes.each_pair do |key, value|
           if(key == 'project_id')
             val += "<Relation name='Scope' act='set'><Asset idref='Scope:#{value}' /></Relation>"
@@ -249,8 +241,7 @@ module VersiononeAPI
 
       val += '</Asset>'
       updated_fields = self.class.updated_fields = nil
-    #   p "encoded:"
-    #   p val
+
       val
     end
 
@@ -283,7 +274,6 @@ module VersiononeAPI
     end
 
     def load_attributes_from_response(response)
-    #   p 'Base load_attributes_from_response'
       if (response_code_allows_body?(response.code) &&
           (response['Content-Length'].nil? || response['Content-Length'] != "0") &&
           !response.body.nil? && response.body.strip.size > 0)
@@ -356,12 +346,10 @@ module VersiononeAPI
       end
 
       def self.element_path(id, prefix_options = {}, query_options = nil)
-        # p "Scope self.element_path"
         self.extended_element_path(id, false, prefix_options, query_options)
       end
 
       def self.extended_element_path(id, is_post, prefix_options = {}, query_options = nil)
-        # p "Scope self.extended_element_path"
         #id format is "resource_name:id", but element_path just needs the id, without the resource_name.
         scope_id = id.to_s
         scope_id.gsub!("Scope:", "")
@@ -371,7 +359,6 @@ module VersiononeAPI
 
 
       def self.instantiate_record(record, prefix_option = {})
-        # p "Scope self.instantiate_record"
         object = record
         object = object.first if object.kind_of? Array
 
@@ -395,7 +382,6 @@ module VersiononeAPI
       }
 
       def update_path
-        # p "Scope update_path"
         self.class.extended_element_path(to_param, true, prefix_options)
       end
 
@@ -404,7 +390,6 @@ module VersiononeAPI
       end
 
       def tickets(options = {})
-        # p "Scope tickets"
         Issue.find(:all, :params => options.update(:scope_id => scope_id))
       end
 
@@ -431,6 +416,8 @@ module VersiononeAPI
   class Issue < Base
     extend HasAssets
     before_save :save_routing
+    before_destroy :save_routing
+
     class << self; attr_accessor :test, :rest_uri,:route, :updated_fields end
     @test = 8
 
@@ -439,7 +426,6 @@ module VersiononeAPI
     @updated_fields = nil
 
     def self.collection_path(prefix_options = {}, query_options = nil)
-    #   p "Issue self.collection_path"
       prefix_options, query_options = split_options(prefix_options) if query_options.nil?
       if @route.nil?
         return "#{site.path}Story#{query_string(query_options)}"
@@ -452,15 +438,12 @@ module VersiononeAPI
     end
 
     def self.element_path(id, prefix_options = {}, query_options = nil)
-    #   p "Issue self.element_path"
       scope_id = id.to_s
       scope_id.gsub!("Story:", "")
       prefix_options, query_options = split_options(prefix_options) if query_options.nil?
 
-    #   p "@rest_uri"
-    #   p @rest_uri
       if !@rest_uri.nil?
-        return @rest_uri[0]
+        return "#{@rest_uri[0]}#{query_string(query_options)}"
       elsif !@route.nil?
         route = @route
         route[0] = route[0].capitalize
@@ -603,7 +586,6 @@ module VersiononeAPI
 
 
     def save_routing
-    #   p "save_routing"
       issuetype = rest_uri = nil
       issuetype = self.issuetype if self.issuetype?
       rest_uri = self.rest_uri if self.rest_uri?
@@ -615,9 +597,7 @@ module VersiononeAPI
       run_callbacks :destroy do
         prefix_options[:op] = 'Delete'
         path = element_path
-        # p "destroy path"
-        # p path
-        connection.post(path, self.class.headers)
+        connection.post(path, nil, self.class.headers)
       end
     end
   end
