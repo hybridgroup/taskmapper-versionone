@@ -478,12 +478,12 @@ module VersiononeAPI
           :assignee => find_value_attribute(object, 'Owners.Name') ,
           :asset_state => find_text_attribute(object, 'AssetState').try { |state| parse_asset_state(state)  },
           :issuetype => issuetype.downcase,
+          :iteration_id => find_relation_id(object, 'Timebox', 'Timebox'),
           :created_at => find_text_attribute(object, 'CreateDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
           :updated_at => find_text_attribute(object, 'ChangeDateUTC').try { |str| DateTime.parse(str) unless str.nil? or str.empty?},
           :parent => parent,
           :estimate => find_text_attribute(object, 'Estimate') #.try {|estimate| estimate.to_i }
           }
-
       super(simplified, prefix_option)
     end
 
@@ -523,9 +523,9 @@ module VersiononeAPI
       self.class.find_asset_id(decoded, 'Story')
     end
 
-    ISSUE_SELECTION_FIELDS = 'Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Owners.Name,AssetState,AssetType,Super,CreateDateUTC,ChangeDateUTC,Estimate'
+    ISSUE_SELECTION_FIELDS = 'Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Timebox,Owners.Name,AssetState,AssetType,Super,CreateDateUTC,ChangeDateUTC,Estimate'
 
-    EPIC_SELECTION_FIELDS = 'Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Owners.Name,AssetState,AssetType,Super,CreateDateUTC,ChangeDateUTC'
+    EPIC_SELECTION_FIELDS = 'Name,Description,RequestedBy,Scope,Priority.Name,Status.Name,Timebox,Owners.Name,AssetState,AssetType,Super,CreateDateUTC,ChangeDateUTC'
 
     UPDATEABLE_FIELDS = {
         'title' => 'Name',
