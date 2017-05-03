@@ -8,20 +8,26 @@ module TaskMapper::Provider
 
       attr_accessor :prefix_options
 
-
       def self.create(*options)
         issue = API.new(*options)
         issue.save!
-        ticket = self.new issue
+        ticket = self.find_by_id(issue.project_id, issue.id, issue.issuetype)
         ticket
       end
 
       ## {:where => "Scope='Scope:#{id}'" }
       # Accepts an integer id and returns the single ticket instance
       # Must be defined by the provider
-      def self.find_by_id(project_id, ticket_id)
+      def self.find_by_id(project_id, ticket_id, issuetype = 'story')
         if self::API.is_a? Class
-          self.new self::API.find(ticket_id, self::API.query_params_for_scope(project_id))
+          tix = nil
+          if issuetype.downcase == 'epic'
+            tix = self::API.find_epics(project_id)
+            tix = tix.last
+          else
+            tix = self::API.find(ticket_id, self::API.query_params_for_scope(project_id))
+          end
+          self.new tix
         else
           raise TaskMapper::Exception.new("#{self.name}::#{this_method} method must be implemented by the provider")
         end
@@ -37,8 +43,33 @@ module TaskMapper::Provider
         end
       end
 
+      def save
+        if @system_data and (something = @system_data[:client]) and something.respond_to?(:attributes)
+        #   p 'something'
+        #   p something
+        
+          changes = 0
+          updated_fields = []
+          something.attributes.each do |k, v|
+            # p "compare attributes on save"
+            # p self.send(k)
+            # p v
+          
+            if self.send(k) != v
+              something.send(k + '=', self.send(k))
+              updated_fields << k
+              changes += 1
+            end
+          end
+          something.class.set_updated_fields updated_fields
+          something.save if changes > 0
+        else
+          raise TaskMapper::Exception.new("#{self.class.name}::#{this_method} method must be implemented by the provider")
+        end
+      end
+
       def resolution
-        self.status_name
+        self.status
       end
 
       def resolution=(value)
@@ -51,16 +82,23 @@ module TaskMapper::Provider
         "#{VersiononeAPI.server}story.mvc/Summary?oidToken=Story%3A#{id}"
       end
 
-      def status
-        return :completed if self.asset_state == :closed
-        return :unstarted if self.asset_state == :deleted
-        return :started if (!self.status_name.nil? && !self.status_name.empty?)
-
-        :unstarted
-      end
+      # def status
+      #   return :completed if self.asset_state == :closed
+      #   return :unstarted if self.asset_state == :deleted
+      #   return :started if (!self.status_name.nil? && !self.status_name.empty?)
+      #
+      #   :unstarted
+      # end
 
       def destroy
-        @system_data[:client].destroy
+
+        begin
+          @system_data[:client].destroy
+        rescue ActiveResource::BadRequest
+          msg = "Cannot delete portfolio items with child elements in VersionOne. Please review your portfolio items in VersionOne to ensure proper deletions."
+          raise TaskMapper::Exception.new(msg)
+        end
+
       end
     end
   end

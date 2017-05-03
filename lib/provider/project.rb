@@ -52,7 +52,9 @@ module TaskMapper::Provider
       private
 
       def self.issues_in_scope(id)
-        VersiononeAPI::Issue.find(:all, API.query_params_for_scope(id)).collect { |ticket| TaskMapper::Provider::Versionone::Ticket.new ticket }
+        tix =  VersiononeAPI::Issue.find_epics(id).collect { |ticket| TaskMapper::Provider::Versionone::Ticket.new ticket }
+        tix += VersiononeAPI::Issue.find_stories(id).collect { |ticket| TaskMapper::Provider::Versionone::Ticket.new ticket }
+        tix
       end
 
     end

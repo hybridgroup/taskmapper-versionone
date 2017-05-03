@@ -5,7 +5,7 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     headers = headers_for('admin', 'admin')
 
     SCOPE_SELECTION_QUERY = 'sel=Name,Description,Owner.Name,CreateDateUTC,ChangeDateUTC,Children'
-    SELECTION_QUERY = 'sel=Name%2CDescription%2CRequestedBy%2CScope%2CPriority.Name%2CStatus.Name%2COwners.Name%2CAssetState%2CCreateDateUTC%2CChangeDateUTC%2CEstimate'
+    SELECTION_QUERY = 'sel=Name%2CDescription%2CRequestedBy%2CScope%2CPriority.Name%2CStatus.Name%2COwners.Name%2CAssetState%2CAssetType%2CSuper%2CCreateDateUTC%2CChangeDateUTC%2CEstimate'
 
     ActiveResource::HttpMock.respond_to do |mock|
       mock.get "/Trial30/rest-1.v1/Data/Scope/1009?#{SCOPE_SELECTION_QUERY}", headers, fixture_for('Scope1009'), 200
@@ -20,7 +20,12 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
       mock.get "/Trial30/rest-1.v1/Data/Story?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1610%27", headers, fixture_for('Stories1610'), 200
       mock.get "/Trial30/rest-1.v1/Data/Story/1013?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1009%27", headers, fixture_for('Story1013'), 200
       mock.get "/Trial30/rest-1.v1/Data/Story/1014?#{SELECTION_QUERY}&where=Scope%3D%27Scope%3A1009%27", headers, fixture_for('Story1014'), 200
+
+      mock.post '/Trial30/rest-1.v1/Data/Story/1013?op=Delete', headers, '<?xml version="1.0" encoding="UTF-8"?><Asset href="/Trial30/rest-1.v1/Data/Story/1013" id="Story:1013" />', 200
     end
+
+
+
 
     # Updated story
     updateRequest = ActiveResource::Request.new(:post,
@@ -44,6 +49,30 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     ActiveResource::HttpMock.responses << [createRequest, createResponse]
 
 
+    #DESTROY story. not sorry.
+
+    destroyRequest = ActiveResource::Request.new(:post,
+                                                 path = '/Trial30/rest-1.v1/Data/Story/1013?op=Delete',
+                                                 # body = "<Asset><Attribute name='Name' act='set'>Ticket #12</Attribute><Attribute name='Description' act='set'>Body</Attribute><Relation name='Scope' act='set'><Asset idref='Scope:1009' /></Relation></Asset>",
+                                                 request_headers = '{"Authorization"=>"Basic YWRtaW46YWRtaW4=", "Content-Type"=>"application/xml"}')
+
+
+        # '<POST: /Trial30/rest-1.v1/Data/Story/1013?op=Delete [{"Authorization"=>"Basic YWRtaW46YWRtaW4=", "Content-Type"=>"application/xml"}] ({})>'
+
+    destroyResponse = ActiveResource::Response.new(body = '<?xml version="1.0" encoding="UTF-8"?><Asset href="/Trial30/rest-1.v1/Data/Story/1013" id="Story:1013" />',
+                                                  status = 200,
+                                                  {})
+
+
+    # destroyRequest = stub_request(:post, "/Trial30/rest-1.v1/Data/Story/1013?op=Delete").
+    #     with(
+    #          :headers => post_headers_for('admin', 'admin'))
+
+
+    # ActiveResource::HttpMock.responses << [destroyRequest, destroyResponse]
+
+    # <?xml version="1.0" encoding="UTF-8"?><Asset href="/Trial30/rest-1.v1/Data/Story/1013" id="Story:1013" />
+
 
     @project_id = 1009
     @ticket_id = 1013
@@ -54,6 +83,11 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @project = @taskmapper.project(@project_id)
     @klass = TaskMapper::Provider::Versionone::Ticket
   end
+
+  it "should test" do
+
+  end
+
 
   it "should be able to load all tickets" do
     @project.tickets.should be_an_instance_of(Array)
@@ -95,8 +129,18 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
     @ticket = @project.ticket(@ticket_id)
     #@ticket.save.should == nil
     @ticket.description = 'hello'
+    @ticket.status = :unstarted
     @ticket.save.should == true
   end
+
+  it "should be able to destroy the hell outta that ticket" do
+    @ticket = @project.ticket(@ticket_id)
+    @ticket.should be_an_instance_of(@klass)
+    @ticket.id.should == @ticket_id
+    destroy = @ticket.destroy
+    expect(destroy).to be_truthy
+  end
+
 
   it "should be able to update a ticket to add a label and save the ticket" do
     pending("using posts in the api access")
@@ -107,10 +151,12 @@ describe "TaskMapper::Provider::Versionone::Ticket" do
   end
 
   it "should be able to create a ticket" do
-    @ticket = @project.ticket!(:title => 'Ticket #12', :description => 'Body')
+    @ticket = @project.ticket!(:title => 'Ticket #12', :description => 'Body', :issuetype => "Story")
     @ticket.should be_an_instance_of(@klass)
     @ticket.id.should == 1072
     @ticket.url.should == "http://server/Trial30/story.mvc/Summary?oidToken=Story%3A1072"
+    expect(@ticket.save).to be_truthy
+
   end
 
   it "should be able to load all tickets based on attributes using updated_at field" do
