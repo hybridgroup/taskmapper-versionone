@@ -1,5 +1,5 @@
 source "http://rubygems.org"
-gem 'taskmapper', :git => 'https://github.com/cardboardit/taskmapper.git', :ref => 'a9cef6474da6cbfbf4582357e4eb137137165a01'
+gem 'taskmapper', :git => 'https://github.com/cardboardit/taskmapper.git', :ref => 'd24d42ea1c79ef458e6604281c1c7ff9a4ffa9a6'
 gem 'nokogiri'
 
 group :test, :development do
