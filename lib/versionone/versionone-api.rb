@@ -354,7 +354,7 @@ module VersiononeAPI
         scope_id = id.to_s
         scope_id.gsub!("Scope:", "")
         prefix_options, query_options = split_options(prefix_options) if query_options.nil?
-        "#{site.path}Scope/#{URI.escape scope_id}#{selection_query_string(query_options, is_post)}"
+        "#{site.path}Scope/#{ERB::Util.url_encode scope_id}#{selection_query_string(query_options, is_post)}"
       end
 
 
@@ -447,9 +447,9 @@ module VersiononeAPI
       elsif !@route.nil?
         route = @route
         route[0] = route[0].capitalize
-        return "#{site.path}#{route}/#{URI.escape scope_id}#{query_string(query_options)}"
+        return "#{site.path}#{route}/#{ERB::Util.url_encode scope_id}#{query_string(query_options)}"
       else
-        return "#{site.path}Story/#{URI.escape scope_id}#{query_string(query_options)}"
+        return "#{site.path}Story/#{ERB::Util.url_encode scope_id}#{query_string(query_options)}"
       end
     end
 
